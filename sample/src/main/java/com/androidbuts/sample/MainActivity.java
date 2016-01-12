@@ -1,7 +1,7 @@
 package com.androidbuts.sample;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.androidbuts.multispinnerfilter.KeyPairBoolData;
@@ -15,7 +15,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.TreeMap;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,7 @@ public class MainActivity extends Activity {
         final List<String> list = Arrays.asList(getResources().getStringArray(R.array.sports_array));
         TreeMap<String, Boolean> items = new TreeMap<>();
         for(String item : list) {
-            items.put(item, Boolean.TRUE);
+            items.put(item, Boolean.FALSE);
         }
 
         /**

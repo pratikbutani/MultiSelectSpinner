@@ -18,7 +18,7 @@ public class MultiSpinner extends Spinner implements OnMultiChoiceClickListener,
 
     private List<String> items;
     private boolean[] selected;
-    private String defaultText = "";
+    private String defaultText = "Select Items";
     private MultiSpinnerListener listener;
 
     public MultiSpinner(Context context) {
@@ -58,7 +58,7 @@ public class MultiSpinner extends Spinner implements OnMultiChoiceClickListener,
         }
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(),
-                R.layout.material_spinner_text,
+                R.layout.textview_for_spinner,
                 new String[]{spinnerText});
         setAdapter(adapter);
         if (selected.length > 0) {
@@ -106,7 +106,7 @@ public class MultiSpinner extends Spinner implements OnMultiChoiceClickListener,
 
         // all text on the spinner
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(),
-                R.layout.material_spinner_text, new String[]{defaultText});
+                R.layout.textview_for_spinner, new String[]{defaultText});
         setAdapter(adapter);
 
         // Set Spinner Text

@@ -1,8 +1,5 @@
 package com.androidbuts.multispinnerfilter;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -25,11 +22,14 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MultiSpinnerSearch extends Spinner implements OnCancelListener {
 
 	private List<KeyPairBoolData> items;
 	//private boolean[] selected;
-	private String defaultText;
+	private String defaultText = "";
 	private MultiSpinnerSearchListener listener;
 	MyAdapter adapter;
 	
@@ -52,7 +52,7 @@ public class MultiSpinnerSearch extends Spinner implements OnCancelListener {
 		StringBuffer spinnerBuffer = new StringBuffer();
 
 		for (int i = 0; i < items.size(); i++) {
-			if (items.get(i).isSelected() == true) {
+			if (items.get(i).isSelected()) {
 				spinnerBuffer.append(items.get(i).getName());
 				spinnerBuffer.append(", ");
 			}

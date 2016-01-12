@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal" >
+    android:gravity="center_horizontal">
 
     <EditText
         android:id="@+id/alertSearchEditText"
@@ -12,7 +11,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:hint="@string/type_to_search"
-        android:inputType="text" >
+        android:inputType="text">
 
         <requestFocus />
     </EditText>
@@ -26,8 +25,7 @@
         android:cacheColorHint="@null"
         android:fadeScrollbars="true"
         android:fastScrollEnabled="true"
-        android:textFilterEnabled="true" >
-    </ListView>
+        android:textFilterEnabled="true" />
 
     <TextView
         android:id="@+id/alertSearchNotFound"
