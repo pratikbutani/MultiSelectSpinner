@@ -1,3 +1,11 @@
+### Changes
+
+  * Made this an Android Studio project.
+  * Added Material library.
+  * Extracted the sample into a separate module.
+  * Code cleanup.
+
+
 ### MultiSelect Spinner with Search/Filter:
 
 ![](https://lh5.googleusercontent.com/-MivlH0DxhMc/VZJ91Aa6qtI/AAAAAAAALdc/ZYfHBo_e9Vk/w325-h577-no/Screenshot_2015-06-30-16-03-59.png)
