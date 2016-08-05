@@ -6,14 +6,12 @@ import android.util.Log;
 
 import com.androidbuts.multispinnerfilter.KeyPairBoolData;
 import com.androidbuts.multispinnerfilter.MultiSpinner;
-import com.androidbuts.multispinnerfilter.MultiSpinner.MultiSpinnerListener;
 import com.androidbuts.multispinnerfilter.MultiSpinnerSearch;
-import com.androidbuts.multispinnerfilter.MultiSpinnerSearch.MultiSpinnerSearchListener;
+import com.androidbuts.multispinnerfilter.MultiSpinnerSearchListener;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.TreeMap;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,9 +24,15 @@ public class MainActivity extends AppCompatActivity {
          * Getting array of String to Bind in Spinner
          */
         final List<String> list = Arrays.asList(getResources().getStringArray(R.array.sports_array));
-        TreeMap<String, Boolean> items = new TreeMap<>();
-        for(String item : list) {
-            items.put(item, Boolean.FALSE);
+
+        final List<KeyPairBoolData> listArray = new ArrayList<KeyPairBoolData>();
+
+        for (int i = 0; i < list.size(); i++) {
+            KeyPairBoolData h = new KeyPairBoolData();
+            h.setId(i + 1);
+            h.setName(list.get(i));
+            h.setSelected(false);
+            listArray.add(h);
         }
 
         /**
@@ -38,15 +42,14 @@ public class MainActivity extends AppCompatActivity {
          */
         MultiSpinner simpleSpinner = (MultiSpinner) findViewById(R.id.simpleMultiSpinner);
 
-        simpleSpinner.setItems(items, new MultiSpinnerListener() {
+        simpleSpinner.setItems(listArray, -1, new MultiSpinnerSearchListener() {
 
             @Override
-            public void onItemsSelected(boolean[] selected) {
+            public void onItemsSelected(List<KeyPairBoolData> items) {
 
-                // your operation with code...
-                for (int i = 0; i < selected.length; i++) {
-                    if (selected[i]) {
-                        Log.i("TAG", i + " : " + list.get(i));
+                for (int i = 0; i < items.size(); i++) {
+                    if (items.get(i).isSelected()) {
+                        Log.i("TAG", i + " : " + items.get(i).getName() + " : " + items.get(i).isSelected());
                     }
                 }
             }
@@ -58,21 +61,21 @@ public class MainActivity extends AppCompatActivity {
          *  Using MultiSpinnerSearch class
          */
         MultiSpinnerSearch searchSpinner = (MultiSpinnerSearch) findViewById(R.id.searchMultiSpinner);
-        final List<KeyPairBoolData> listArray = new ArrayList<KeyPairBoolData>();
+        final List<KeyPairBoolData> listArray2 = new ArrayList<KeyPairBoolData>();
 
         for (int i = 0; i < list.size(); i++) {
             KeyPairBoolData h = new KeyPairBoolData();
             h.setId(i + 1);
             h.setName(list.get(i));
             h.setSelected(false);
-            listArray.add(h);
+            listArray2.add(h);
         }
 
         /***
          * -1 is no by default selection
          * 0 to length will select corresponding values
          */
-        searchSpinner.setItems(listArray, "Multi Selection With Filter", -1, new MultiSpinnerSearchListener() {
+        searchSpinner.setItems(listArray2, -1, new MultiSpinnerSearchListener() {
 
             @Override
             public void onItemsSelected(List<KeyPairBoolData> items) {
