@@ -80,12 +80,12 @@
 	/**
 	 *  Using MultiSpinnerSearch object
 	 *  call setLimit method
-	 *  if want to notify limit for client user, use setLimitListner method
+	 *  
 	 */
-	searchSpinner.setLimit(3);
-	searchSpinner.setLimitListener(new MultiSpinnerSearch.LimitExceedListener() {
+	searchSpinner.setLimit(3, new MultiSpinnerSearch.LimitExceedListener() {
             @Override
             public void onLimitListener(KeyPairBoolData data) {
-                Log.i("TAG", data.getName() + " limit exceed");
+                Toast.makeText(getApplicationContext(),
+                        "Limit exceed ", Toast.LENGTH_LONG).show();
             }
         });

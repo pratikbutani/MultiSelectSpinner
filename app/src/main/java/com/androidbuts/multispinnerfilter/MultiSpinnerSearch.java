@@ -66,8 +66,9 @@ public class MultiSpinnerSearch extends Spinner implements OnCancelListener {
         super(arg0, arg1, arg2);
     }
 
-    public void setLimit(int limit) {
+    public void setLimit(int limit, LimitExceedListener listener) {
         this.limit = limit;
+        this.limitListener = listener;
     }
 
     public List<KeyPairBoolData> getSelectedItems() {
@@ -194,10 +195,6 @@ public class MultiSpinnerSearch extends Spinner implements OnCancelListener {
             //listener.onItemsSelected(items);
             onCancel(null);
         }
-    }
-
-    public void setLimitListener(LimitExceedListener listener) {
-        this.limitListener = listener;
     }
 
     public interface LimitExceedListener {
