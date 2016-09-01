@@ -73,3 +73,19 @@
 			}
 		}
 	});
+
+
+### (Optional) Limit setting 
+
+	/**
+	 *  Using MultiSpinnerSearch object
+	 *  call setLimit method
+	 *  if want to notify limit for client user, use setLimitListner method
+	 */
+	searchSpinner.setLimit(3);
+	searchSpinner.setLimitListener(new MultiSpinnerSearch.LimitExceedListener() {
+            @Override
+            public void onLimitListener(KeyPairBoolData data) {
+                Log.i("TAG", data.getName() + " limit exceed");
+            }
+        });
