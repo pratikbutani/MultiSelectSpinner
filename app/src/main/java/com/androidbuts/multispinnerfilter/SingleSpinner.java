@@ -1,6 +1,5 @@
 package com.androidbuts.multispinnerfilter;
 
-import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -9,8 +8,6 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.support.v4.content.ContextCompat;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -19,8 +16,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
-import android.widget.Filter;
-import android.widget.Filterable;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -28,8 +23,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SingleSpinnerSearch extends Spinner implements OnCancelListener {
-	private static final String TAG = SingleSpinnerSearch.class.getSimpleName();
+public class SingleSpinner extends Spinner implements OnCancelListener {
+	private static final String TAG = SingleSpinner.class.getSimpleName();
 	private List<KeyPairBoolData> items;
 	private String defaultText = "";
 	private String spinnerTitle = "";
@@ -38,11 +33,11 @@ public class SingleSpinnerSearch extends Spinner implements OnCancelListener {
 	public static AlertDialog.Builder builder;
 	public static AlertDialog ad;
 
-	public SingleSpinnerSearch(Context context) {
+	public SingleSpinner(Context context) {
 		super(context);
 	}
 
-	public SingleSpinnerSearch(Context arg0, AttributeSet arg1) {
+	public SingleSpinner(Context arg0, AttributeSet arg1) {
 		super(arg0, arg1);
 		TypedArray a = arg0.obtainStyledAttributes(arg1, R.styleable.MultiSpinnerSearch);
 		final int N = a.getIndexCount();
@@ -58,7 +53,7 @@ public class SingleSpinnerSearch extends Spinner implements OnCancelListener {
 		a.recycle();
 	}
 
-	public SingleSpinnerSearch(Context arg0, AttributeSet arg1, int arg2) {
+	public SingleSpinner(Context arg0, AttributeSet arg1, int arg2) {
 		super(arg0, arg1, arg2);
 	}
 
@@ -124,31 +119,11 @@ public class SingleSpinnerSearch extends Spinner implements OnCancelListener {
 		adapter = new MyAdapter(getContext(), items);
 
 		listView.setAdapter(adapter);
-		for(int i =0;i<items.size();i++){
-			if(items.get(i).isSelected()){
-				listView.setSelection(i);
-				break;
-			}
-		}
 		final TextView emptyText = (TextView) view.findViewById(R.id.empty);
 		listView.setEmptyView(emptyText);
 
 		EditText editText = (EditText) view.findViewById(R.id.alertSearchEditText);
-		editText.addTextChangedListener(new TextWatcher() {
-
-			@Override
-			public void onTextChanged(CharSequence s, int start, int before, int count) {
-				adapter.getFilter().filter(s.toString());
-			}
-
-			@Override
-			public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-			}
-
-			@Override
-			public void afterTextChanged(Editable s) {
-			}
-		});
+		editText.setVisibility(GONE);
 
 		builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
 
@@ -191,10 +166,9 @@ public class SingleSpinnerSearch extends Spinner implements OnCancelListener {
 
 
 	//Adapter Class
-	public class MyAdapter extends BaseAdapter implements Filterable {
+	public class MyAdapter extends BaseAdapter{
 
 		List<KeyPairBoolData> arrayList;
-		List<KeyPairBoolData> mOriginalValues; // Original Values
 		LayoutInflater inflater;
 
 		public MyAdapter(Context context, List<KeyPairBoolData> arrayList) {
@@ -225,7 +199,7 @@ public class SingleSpinnerSearch extends Spinner implements OnCancelListener {
 		public View getView(final int position, View convertView, ViewGroup parent) {
 			Log.i(TAG, "getView() enter");
 			ViewHolder holder = new ViewHolder();
-			convertView = inflater.inflate(R.layout.item_listview_single, parent, false);
+			convertView = inflater.inflate(R.layout.item_listview_single,  parent, false);
 			holder.textView = (TextView) convertView.findViewById(R.id.alertTextView);
 			convertView.setTag(holder);
 
@@ -255,7 +229,7 @@ public class SingleSpinnerSearch extends Spinner implements OnCancelListener {
 						}
 					}
 					ad.dismiss();
-					SingleSpinnerSearch.this.onCancel(ad);
+					SingleSpinner.this.onCancel(ad);
 				}
 			});
 
@@ -265,57 +239,6 @@ public class SingleSpinnerSearch extends Spinner implements OnCancelListener {
 				convertView.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.list_selected));
 			}
 			return convertView;
-		}
-
-		@SuppressLint("DefaultLocale")
-		@Override
-		public Filter getFilter() {
-			return new Filter() {
-
-				@SuppressWarnings("unchecked")
-				@Override
-				protected void publishResults(CharSequence constraint,FilterResults results) {
-
-					arrayList = (List<KeyPairBoolData>) results.values; // has the filtered values
-					notifyDataSetChanged();  // notifies the data with new filtered values
-				}
-
-				@Override
-				protected FilterResults performFiltering(CharSequence constraint) {
-					FilterResults results = new FilterResults();        // Holds the results of a filtering operation in values
-					List<KeyPairBoolData> FilteredArrList = new ArrayList<>();
-
-					if (mOriginalValues == null) {
-						mOriginalValues = new ArrayList<>(arrayList); // saves the original data in mOriginalValues
-					}
-
-					/********
-					 * 
-					 *  If constraint(CharSequence that is received) is null returns the mOriginalValues(Original) values
-					 *  else does the Filtering and returns FilteredArrList(Filtered)  
-					 *
-					 ********/
-					if (constraint == null || constraint.length() == 0) {
-
-						// set the Original result to return  
-						results.count = mOriginalValues.size();
-						results.values = mOriginalValues;
-					} else {
-						constraint = constraint.toString().toLowerCase();
-						for (int i = 0; i < mOriginalValues.size(); i++) {
-							Log.i(TAG, "Filter : " + mOriginalValues.get(i).getName() + " -> " + mOriginalValues.get(i).isSelected());
-							String data = mOriginalValues.get(i).getName();
-							if (data.toLowerCase().contains(constraint.toString())) {
-								FilteredArrList.add(mOriginalValues.get(i));
-							}
-						}
-						// set the Filtered result to return
-						results.count = FilteredArrList.size();
-						results.values = FilteredArrList;
-					}
-					return results;
-				}
-			};
 		}
 	}
 }

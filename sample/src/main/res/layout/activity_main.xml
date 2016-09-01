@@ -2,6 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="10dp"
     android:orientation="vertical">
 
     <com.androidbuts.multispinnerfilter.MultiSpinner
@@ -9,14 +10,29 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        app:hintText="Multi Selection"/>
+        android:visibility="gone"
+        app:hintText="Multi Selection" />
 
     <com.androidbuts.multispinnerfilter.MultiSpinnerSearch
         android:id="@+id/searchMultiSpinner"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:layout_marginTop="20dp"
-        app:hintText="Multi Selection With Filter"/>
+        android:layout_margin="10dp"
+        app:hintText="Multi Selection With Filter" />
+
+    <com.androidbuts.multispinnerfilter.SingleSpinnerSearch
+        android:id="@+id/searchSingleSpinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:hintText="Single Selection With Filter" />
+
+    <com.androidbuts.multispinnerfilter.SingleSpinner
+        android:id="@+id/singleSpinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:hintText="Single Selection" />
+
 
 </LinearLayout>
