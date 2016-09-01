@@ -94,6 +94,13 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        searchSpinner.setLimit(2);
+        searchSpinner.setLimitListener(new MultiSpinnerSearch.LimitExceedListener() {
+            @Override
+            public void onLimitListener(KeyPairBoolData data) {
+                Log.i("TAG", data.getName() + " limit exceed");
+            }
+        });
 
         searchSingleSpinner.setItems(listArray2, -1, new SpinnerListener() {
 
