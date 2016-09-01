@@ -11,7 +11,7 @@
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
         android:layout_toLeftOf="@+id/alertCheckbox"
-        android:text="wtf"
+        android:text="Item Name"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <CheckBox

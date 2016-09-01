@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 import android.content.DialogInterface.OnMultiChoiceClickListener;
+import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.widget.ArrayAdapter;
 
@@ -19,6 +20,7 @@ public class MultiSpinner extends Spinner implements OnMultiChoiceClickListener,
     private List<String> items;
     private boolean[] selected;
     private String defaultText = "Select Items";
+    private String spinnerTitle = "";
     private MultiSpinnerListener listener;
 
     public MultiSpinner(Context context) {
@@ -27,6 +29,15 @@ public class MultiSpinner extends Spinner implements OnMultiChoiceClickListener,
 
     public MultiSpinner(Context arg0, AttributeSet arg1) {
         super(arg0, arg1);
+        TypedArray a = arg0.obtainStyledAttributes(arg1, R.styleable.MultiSpinnerSearch);
+        final int N = a.getIndexCount();
+        for (int i = 0; i < N; ++i) {
+            int attr = a.getIndex(i);
+            if (attr == R.styleable.MultiSpinnerSearch_hintText) {
+                spinnerTitle = a.getString(attr);
+            }
+        }
+        a.recycle();
     }
 
     public MultiSpinner(Context arg0, AttributeSet arg1, int arg2) {
@@ -49,17 +60,14 @@ public class MultiSpinner extends Spinner implements OnMultiChoiceClickListener,
             }
         }
 
-        String spinnerText = "";
-        spinnerText = spinnerBuffer.toString();
+        String spinnerText = spinnerBuffer.toString();
         if (spinnerText.length() > 2) {
             spinnerText = spinnerText.substring(0, spinnerText.length() - 2);
         } else {
             spinnerText = defaultText;
         }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(),
-                R.layout.textview_for_spinner,
-                new String[]{spinnerText});
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), R.layout.textview_for_spinner, new String[]{spinnerText});
         setAdapter(adapter);
         if (selected.length > 0) {
             listener.onItemsSelected(selected);
@@ -69,8 +77,8 @@ public class MultiSpinner extends Spinner implements OnMultiChoiceClickListener,
 
     @Override
     public boolean performClick() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setTitle(defaultText);
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext(), R.style.myDialog);
+        builder.setTitle(spinnerTitle);
         builder.setMultiChoiceItems(
                 items.toArray(new CharSequence[items.size()]), selected, this);
         builder.setPositiveButton(android.R.string.ok,
@@ -93,8 +101,7 @@ public class MultiSpinner extends Spinner implements OnMultiChoiceClickListener,
      *                 and the value the initial selected state of the key.
      * @param listener A MultiSpinnerListener.
      */
-    public void setItems(TreeMap<String, Boolean> items,
-                         MultiSpinnerListener listener) {
+    public void setItems(TreeMap<String, Boolean> items, MultiSpinnerListener listener) {
         this.items = new ArrayList<>(items.keySet());
         this.listener = listener;
 
@@ -105,15 +112,11 @@ public class MultiSpinner extends Spinner implements OnMultiChoiceClickListener,
         }
 
         // all text on the spinner
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(),
-                R.layout.textview_for_spinner, new String[]{defaultText});
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), R.layout.textview_for_spinner, new String[]{defaultText});
         setAdapter(adapter);
 
         // Set Spinner Text
         onCancel(null);
     }
 
-    public interface MultiSpinnerListener {
-        void onItemsSelected(boolean[] selected);
-    }
 }
