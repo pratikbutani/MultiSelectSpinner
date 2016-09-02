@@ -3,6 +3,7 @@ package com.androidbuts.sample;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.androidbuts.multispinnerfilter.KeyPairBoolData;
 import com.androidbuts.multispinnerfilter.MultiSpinnerSearch;
@@ -92,6 +93,14 @@ public class MainActivity extends AppCompatActivity {
                         Log.i("TAG", i + " : " + items.get(i).getName() + " : " + items.get(i).isSelected());
                     }
                 }
+            }
+        });
+
+        searchSpinner.setLimit(2, new MultiSpinnerSearch.LimitExceedListener() {
+            @Override
+            public void onLimitListener(KeyPairBoolData data) {
+                Toast.makeText(getApplicationContext(),
+                        "Limit exceed ", Toast.LENGTH_LONG).show();
             }
         });
 

@@ -73,3 +73,19 @@
 			}
 		}
 	});
+
+
+### (Optional) Limit setting 
+
+	/**
+	 *  Using MultiSpinnerSearch object
+	 *  call setLimit method
+	 *  
+	 */
+	searchSpinner.setLimit(3, new MultiSpinnerSearch.LimitExceedListener() {
+            @Override
+            public void onLimitListener(KeyPairBoolData data) {
+                Toast.makeText(getApplicationContext(),
+                        "Limit exceed ", Toast.LENGTH_LONG).show();
+            }
+        });

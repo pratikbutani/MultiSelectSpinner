@@ -35,6 +35,9 @@ public class MultiSpinnerSearch extends Spinner implements OnCancelListener {
     private String defaultText = "";
     private String spinnerTitle = "";
     private SpinnerListener listener;
+    private int limit = 0;
+    private int selected = 0;
+    private LimitExceedListener limitListener;
     MyAdapter adapter;
     public static AlertDialog.Builder builder;
     public static AlertDialog ad;
@@ -46,8 +49,8 @@ public class MultiSpinnerSearch extends Spinner implements OnCancelListener {
     public MultiSpinnerSearch(Context arg0, AttributeSet arg1) {
         super(arg0, arg1);
         TypedArray a = arg0.obtainStyledAttributes(arg1, R.styleable.MultiSpinnerSearch);
-        final int N = a.getIndexCount();
-        for (int i = 0; i < N; ++i) {
+        limit = a.getIndexCount();
+        for (int i = 0; i < limit; ++i) {
             int attr = a.getIndex(i);
             if (attr == R.styleable.MultiSpinnerSearch_hintText) {
                 spinnerTitle = a.getString(attr);
@@ -61,6 +64,11 @@ public class MultiSpinnerSearch extends Spinner implements OnCancelListener {
 
     public MultiSpinnerSearch(Context arg0, AttributeSet arg1, int arg2) {
         super(arg0, arg1, arg2);
+    }
+
+    public void setLimit(int limit, LimitExceedListener listener) {
+        this.limit = limit;
+        this.limitListener = listener;
     }
 
     public List<KeyPairBoolData> getSelectedItems() {
@@ -117,9 +125,9 @@ public class MultiSpinnerSearch extends Spinner implements OnCancelListener {
         builder = new AlertDialog.Builder(getContext(), R.style.myDialog);
         builder.setTitle(spinnerTitle);
 
-        LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        final LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        View view = inflater.inflate(R.layout.alert_dialog_listview_search, null);
+        final View view = inflater.inflate(R.layout.alert_dialog_listview_search, null);
         builder.setView(view);
 
         final ListView listView = (ListView) view.findViewById(R.id.alertSearchListView);
@@ -131,7 +139,7 @@ public class MultiSpinnerSearch extends Spinner implements OnCancelListener {
         final TextView emptyText = (TextView) view.findViewById(R.id.empty);
         listView.setEmptyView(emptyText);
 
-        EditText editText = (EditText) view.findViewById(R.id.alertSearchEditText);
+        final EditText editText = (EditText) view.findViewById(R.id.alertSearchEditText);
         editText.addTextChangedListener(new TextWatcher() {
 
             @Override
@@ -189,6 +197,9 @@ public class MultiSpinnerSearch extends Spinner implements OnCancelListener {
         }
     }
 
+    public interface LimitExceedListener {
+        void onLimitListener(KeyPairBoolData data);
+    }
 
     //Adapter Class
     public class MyAdapter extends BaseAdapter implements Filterable {
@@ -228,7 +239,6 @@ public class MultiSpinnerSearch extends Spinner implements OnCancelListener {
             ViewHolder holder;
 
             if (convertView == null) {
-
                 holder = new ViewHolder();
                 convertView = inflater.inflate(R.layout.item_listview_multiple,  parent, false);
                 holder.textView = (TextView) convertView.findViewById(R.id.alertTextView);
@@ -238,11 +248,10 @@ public class MultiSpinnerSearch extends Spinner implements OnCancelListener {
             } else {
                 holder = (ViewHolder) convertView.getTag();
             }
-            if(position%2==0){
-                convertView.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.list_even));
-            }else{
-                convertView.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.list_odd));
-            }
+
+            final int backgroundColor = (position%2 == 0) ? R.color.list_even : R.color.list_odd;
+            convertView.setBackgroundColor(ContextCompat.getColor(getContext(), backgroundColor));
+
             final KeyPairBoolData data = arrayList.get(position);
 
             holder.textView.setText(data.getName());
@@ -251,17 +260,21 @@ public class MultiSpinnerSearch extends Spinner implements OnCancelListener {
 
             convertView.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
-                    ViewHolder temp = (ViewHolder) v.getTag();
+                    if(data.isSelected()) { // unselect
+                        selected--;
+                    } else if(selected == limit) { // select with limit
+                        if(limitListener != null)
+                            limitListener.onLimitListener(data);
+                        return;
+                    } else { // selected
+                        selected++;
+                    }
+
+                    final ViewHolder temp = (ViewHolder) v.getTag();
                     temp.checkBox.setChecked(!temp.checkBox.isChecked());
 
-                    int len = arrayList.size();
-                    for (int i = 0; i < len; i++) {
-                        if (i == position) {
-                            data.setSelected(!data.isSelected());
-                            Log.i(TAG, "On Click Selected Item : " + arrayList.get(i).getName() + " : " + arrayList.get(i).isSelected());
-                            break;
-                        }
-                    }
+                    data.setSelected(!data.isSelected());
+                    Log.i(TAG, "On Click Selected Item : " + data.getName() + " : " + data.isSelected());
                 }
             });
             if (data.isSelected()) {
