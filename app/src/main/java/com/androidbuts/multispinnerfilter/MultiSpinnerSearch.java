@@ -9,6 +9,7 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.AppCompatSpinner;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
@@ -23,19 +24,18 @@ import android.widget.EditText;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ListView;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MultiSpinnerSearch extends Spinner implements OnCancelListener {
+public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelListener {
     private static final String TAG = MultiSpinnerSearch.class.getSimpleName();
     private List<KeyPairBoolData> items;
     private String defaultText = "";
     private String spinnerTitle = "";
     private SpinnerListener listener;
-    private int limit = 0;
+    private int limit = -1;
     private int selected = 0;
     private LimitExceedListener limitListener;
     MyAdapter adapter;
@@ -49,8 +49,7 @@ public class MultiSpinnerSearch extends Spinner implements OnCancelListener {
     public MultiSpinnerSearch(Context arg0, AttributeSet arg1) {
         super(arg0, arg1);
         TypedArray a = arg0.obtainStyledAttributes(arg1, R.styleable.MultiSpinnerSearch);
-        limit = a.getIndexCount();
-        for (int i = 0; i < limit; ++i) {
+        for (int i = 0; i < a.getIndexCount(); ++i) {
             int attr = a.getIndex(i);
             if (attr == R.styleable.MultiSpinnerSearch_hintText) {
                 spinnerTitle = a.getString(attr);
@@ -260,7 +259,7 @@ public class MultiSpinnerSearch extends Spinner implements OnCancelListener {
 
             convertView.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
-                    if(data.isSelected()) { // unselect
+                    if(data.isSelected()) { // deselect
                         selected--;
                     } else if(selected == limit) { // select with limit
                         if(limitListener != null)
@@ -275,6 +274,7 @@ public class MultiSpinnerSearch extends Spinner implements OnCancelListener {
 
                     data.setSelected(!data.isSelected());
                     Log.i(TAG, "On Click Selected Item : " + data.getName() + " : " + data.isSelected());
+                    notifyDataSetChanged();
                 }
             });
             if (data.isSelected()) {
