@@ -1,0 +1,25 @@
+<resources>
+
+    <style name="MaterialSpinner" parent="Material.Widget.Spinner">
+        <item name="rd_style">@style/Material.Drawable.Ripple.Wave.Light</item>
+        <item name="spn_labelEnable">true</item>
+        <item name="spn_labelTextSize">18sp</item>
+        <item name="spn_arrowSwitchMode">true</item>
+        <item name="spn_arrowAnimDuration">@android:integer/config_shortAnimTime</item>
+        <item name="spn_arrowInterpolator">@android:anim/decelerate_interpolator</item>
+    </style>
+
+    <style name="myDialog" parent="@android:style/Theme.Holo.Light.Dialog">
+        <item name="android:windowTitleStyle">@style/myDialogTitle</item>
+    </style>
+
+    <style name="myDialogTitle" parent="@android:style/TextAppearance.DialogWindowTitle">
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="DialogWindowTitle">
+        <item name="android:maxLines">1</item>
+        <item name="android:scrollHorizontally">true</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.DialogWindowTitle</item>
+    </style>
+</resources>

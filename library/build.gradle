@@ -1,0 +1,50 @@
+apply plugin: 'com.android.library'
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'MultiSelectSpinner'
+
+    publishedGroupId = 'com.inthecheesefactory.thecheeselibrary'
+    libraryName = 'MultiSelectSpinner'
+    artifact = 'MultiSelectSpinner'
+
+    libraryDescription = 'Its helpful to Select Multiple Values from Spinner list.'
+
+    siteUrl = 'https://github.com/pratikbutani/MultiSelectSpinner'
+    gitUrl = 'https://github.com/pratikbutani/MultiSelectSpinner'
+
+    libraryVersion = '1.0'
+
+    developerId = 'pratikbutani'
+    developerName = 'Pratik Butani'
+    developerEmail = 'pratik13butani@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '25.0.2'
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 25
+        versionCode 1
+        versionName '1.0'
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+    compile 'com.github.rey5137:material:1.2.2'
+    compile 'com.android.support:support-v4:26.0.0-alpha1'
+    compile 'com.android.support:design:26.0.0-alpha1'
+}
