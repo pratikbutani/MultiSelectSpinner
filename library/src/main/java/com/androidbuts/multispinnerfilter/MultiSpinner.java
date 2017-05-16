@@ -13,7 +13,7 @@ import com.rey.material.widget.Spinner;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.TreeMap;
+import java.util.LinkedHashMap;
 
 public class MultiSpinner extends Spinner implements OnMultiChoiceClickListener, OnCancelListener {
 
@@ -101,7 +101,7 @@ public class MultiSpinner extends Spinner implements OnMultiChoiceClickListener,
      *                 and the value the initial selected state of the key.
      * @param listener A MultiSpinnerListener.
      */
-    public void setItems(TreeMap<String, Boolean> items, MultiSpinnerListener listener) {
+    public void setItems(LinkedHashMap<String, Boolean> items, MultiSpinnerListener listener) {
         this.items = new ArrayList<>(items.keySet());
         this.listener = listener;
 
