@@ -22,13 +22,12 @@ import android.widget.EditText;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ListView;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SingleSpinnerSearch extends Spinner implements OnCancelListener {
+public class SingleSpinnerSearch extends android.support.v7.widget.AppCompatSpinner implements OnCancelListener {
 	private static final String TAG = SingleSpinnerSearch.class.getSimpleName();
 	private List<KeyPairBoolData> items;
 	private String defaultText = "";

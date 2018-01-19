@@ -10,7 +10,7 @@
         android:layout_margin="20dp" />
 
     <com.androidbuts.multispinnerfilter.MultiSpinnerSearch
-        android:id="@+id/searchMultiSpinner"
+         android:id="@+id/searchMultiSpinner"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
