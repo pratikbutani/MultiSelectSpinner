@@ -1,3 +1,7 @@
+### How to import (Add dependency in build.gradle):
+
+    compile 'com.github.pratikbutani:MultiSelectSpinner:c3051c6922'
+
 ### Changes
 
   * Made this an Android Studio project.
