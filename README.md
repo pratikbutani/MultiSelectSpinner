@@ -1,3 +1,5 @@
+[![](https://jitpack.io/v/pratikbutani/MultiSelectSpinner.svg)](https://jitpack.io/#pratikbutani/MultiSelectSpinner)
+
 ### How to import (Add dependency in build.gradle):
 
     compile 'com.github.pratikbutani:MultiSelectSpinner:c3051c6922'
