@@ -2,7 +2,7 @@
 
 ### How to import (Add dependency in build.gradle):
 
-    compile 'com.github.pratikbutani:MultiSelectSpinner:08d324c987'
+    implementation 'com.github.pratikbutani:MultiSelectSpinner:08d324c98'
 
 ### Changes
 
