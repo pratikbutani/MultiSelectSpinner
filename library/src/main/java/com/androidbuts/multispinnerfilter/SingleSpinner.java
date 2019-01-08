@@ -23,7 +23,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SingleSpinner extends android.support.v7.widget.AppCompatSpinner implements OnCancelListener {
+public class SingleSpinner extends android.support.v7.widget.AppCompatSpinner implements OnCancelListener  {
     private static final String TAG = SingleSpinner.class.getSimpleName();
     private List<KeyPairBoolData> items;
     private String defaultText = "";
@@ -170,6 +170,7 @@ public class SingleSpinner extends android.support.v7.widget.AppCompatSpinner im
             onCancel(null);
         }
     }
+
 
 
     //Adapter Class

@@ -32,7 +32,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelListener {
+public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelListener{
     private static final String TAG = MultiSpinnerSearch.class.getSimpleName();
     private List<KeyPairBoolData> items;
     private String defaultText = "";
