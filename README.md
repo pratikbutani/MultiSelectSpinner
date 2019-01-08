@@ -112,4 +112,3 @@
 	
 ### (Optional) Add Colorseparation to the list
 	searchSpinner.setColorseparation(true);
-
