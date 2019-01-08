@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 27
-    buildToolsVersion '27.0.3'
+    buildToolsVersion '28.0.3'
     defaultConfig {
         applicationId "com.androidbuts.sample"
         minSdkVersion 14
@@ -21,8 +21,8 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile project(':library')
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:27.0.2'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':library')
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.android.support:appcompat-v7:27.0.2'
 }
