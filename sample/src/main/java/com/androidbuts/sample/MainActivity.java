@@ -108,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
          * -1 is no by default selection
          * 0 to length will select corresponding values
          */
+        searchMultiSpinnerLimit.setColorseparation(true);
         searchMultiSpinnerLimit.setItems(listArray1, -1, new SpinnerListener() {
 
             @Override
