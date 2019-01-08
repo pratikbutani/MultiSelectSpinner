@@ -14,18 +14,15 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Filter;
 import android.widget.Filterable;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -134,7 +131,6 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
     public boolean performClick() {
 
         builder = new AlertDialog.Builder(getContext());
-//        builder = new AlertDialog.Builder(getContext(), R.style.myDialog);
         builder.setTitle(spinnerTitle);
 
         final LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -145,7 +141,7 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
         final ListView listView = (ListView) view.findViewById(R.id.alertSearchListView);
         listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
         listView.setFastScrollEnabled(false);
-        adapter = new MyAdapter(getContext(), items,colorseparation);
+        adapter = new MyAdapter(getContext(), items);
         listView.setAdapter(adapter);
 
         final TextView emptyText = (TextView) view.findViewById(R.id.empty);
@@ -222,12 +218,10 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
         List<KeyPairBoolData> arrayList;
         List<KeyPairBoolData> mOriginalValues; // Original Values
         LayoutInflater inflater;
-        boolean colorseparation;
 
-        public MyAdapter(Context context, List<KeyPairBoolData> arrayList, boolean colorseparation) {
+        public MyAdapter(Context context, List<KeyPairBoolData> arrayList) {
             this.arrayList = arrayList;
             inflater = LayoutInflater.from(context);
-            this.colorseparation = colorseparation;
         }
 
         @Override

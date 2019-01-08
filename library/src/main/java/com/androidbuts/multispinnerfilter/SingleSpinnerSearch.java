@@ -118,7 +118,7 @@ public class SingleSpinnerSearch extends android.support.v7.widget.AppCompatSpin
     @Override
     public boolean performClick() {
 
-        builder = new AlertDialog.Builder(getContext(), R.style.myDialog);
+        builder = new AlertDialog.Builder(getContext());
         builder.setTitle(spinnerTitle);
 
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -129,7 +129,7 @@ public class SingleSpinnerSearch extends android.support.v7.widget.AppCompatSpin
         final ListView listView = (ListView) view.findViewById(R.id.alertSearchListView);
         listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         listView.setFastScrollEnabled(false);
-        adapter = new MyAdapter(getContext(), items,colorseparation);
+        adapter = new MyAdapter(getContext(), items);
 
         listView.setAdapter(adapter);
         for (int i = 0; i < items.size(); i++) {
@@ -202,11 +202,10 @@ public class SingleSpinnerSearch extends android.support.v7.widget.AppCompatSpin
         List<KeyPairBoolData> arrayList;
         List<KeyPairBoolData> mOriginalValues; // Original Values
         LayoutInflater inflater;
-        boolean colorseparation;
-        public MyAdapter(Context context, List<KeyPairBoolData> arrayList,boolean colorseparation) {
+
+        public MyAdapter(Context context, List<KeyPairBoolData> arrayList) {
             this.arrayList = arrayList;
             inflater = LayoutInflater.from(context);
-            this.colorseparation=colorseparation;
         }
 
         @Override

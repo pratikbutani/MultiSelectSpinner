@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
                         "Limit exceed ", Toast.LENGTH_LONG).show();
             }
         });
-
+        searchSingleSpinner.setColorseparation(true);
         searchSingleSpinner.setItems(listArray2, -1, new SpinnerListener() {
 
             @Override

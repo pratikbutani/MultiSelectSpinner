@@ -17,7 +17,6 @@ import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -125,7 +124,7 @@ public class SingleSpinner extends android.support.v7.widget.AppCompatSpinner im
         final ListView listView = (ListView) view.findViewById(R.id.alertSearchListView);
         listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         listView.setFastScrollEnabled(false);
-        adapter = new MyAdapter(getContext(), items,colorseparation);
+        adapter = new MyAdapter(getContext(), items);
 
         listView.setAdapter(adapter);
         final TextView emptyText = (TextView) view.findViewById(R.id.empty);
@@ -178,11 +177,9 @@ public class SingleSpinner extends android.support.v7.widget.AppCompatSpinner im
 
         List<KeyPairBoolData> arrayList;
         LayoutInflater inflater;
-        boolean colorseparation;
 
-        public MyAdapter(Context context, List<KeyPairBoolData> arrayList, boolean colorseparation) {
+        public MyAdapter(Context context, List<KeyPairBoolData> arrayList) {
             this.arrayList = arrayList;
-            this.colorseparation = colorseparation;
             inflater = LayoutInflater.from(context);
         }
 
