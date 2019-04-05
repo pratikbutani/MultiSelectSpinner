@@ -45,14 +45,19 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
     public MultiSpinnerSearch(Context context) {
         super(context);
     }
-
+    public String getHintText(){
+       return this.spinnerTitle;
+    }
+     public void setHintText(String hibtText){
+       this.spinnerTitle = hibtText;
+    }
     public MultiSpinnerSearch(Context arg0, AttributeSet arg1) {
         super(arg0, arg1);
         TypedArray a = arg0.obtainStyledAttributes(arg1, R.styleable.MultiSpinnerSearch);
         for (int i = 0; i < a.getIndexCount(); ++i) {
             int attr = a.getIndex(i);
             if (attr == R.styleable.MultiSpinnerSearch_hintText) {
-                spinnerTitle = a.getString(attr);
+                spinnerTitle = this.setHintText(a.getString(attr));
                 defaultText = spinnerTitle;
                 break;
             }
@@ -107,7 +112,7 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
         if (spinnerText.length() > 2)
             spinnerText = spinnerText.substring(0, spinnerText.length() - 2);
         else
-            spinnerText = defaultText;
+            spinnerText = this.getHintText();
 
         ArrayAdapter<String> adapterSpinner = new ArrayAdapter<>(getContext(), R.layout.textview_for_spinner, new String[]{spinnerText});
         setAdapter(adapterSpinner);
