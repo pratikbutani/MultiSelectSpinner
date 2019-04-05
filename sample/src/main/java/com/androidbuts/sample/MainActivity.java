@@ -108,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
          * -1 is no by default selection
          * 0 to length will select corresponding values
          */
+        searchMultiSpinnerLimit.setColorseparation(true);
         searchMultiSpinnerLimit.setItems(listArray1, -1, new SpinnerListener() {
 
             @Override
@@ -128,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
                         "Limit exceed ", Toast.LENGTH_LONG).show();
             }
         });
-
+        searchSingleSpinner.setColorseparation(true);
         searchSingleSpinner.setItems(listArray2, -1, new SpinnerListener() {
 
             @Override

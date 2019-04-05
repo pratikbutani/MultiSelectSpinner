@@ -29,7 +29,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelListener {
+public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelListener{
     private static final String TAG = MultiSpinnerSearch.class.getSimpleName();
     private List<KeyPairBoolData> items;
     private String defaultText = "";
@@ -41,6 +41,15 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
     MyAdapter adapter;
     public static AlertDialog.Builder builder;
     public static AlertDialog ad;
+    private boolean colorseparation = false;
+
+    public boolean isColorseparation() {
+        return colorseparation;
+    }
+
+    public void setColorseparation(boolean colorseparation) {
+        this.colorseparation = colorseparation;
+    }
 
     public MultiSpinnerSearch(Context context) {
         super(context);
@@ -62,7 +71,7 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
                 break;
             }
         }
-        Log.i(TAG, "spinnerTitle: "+spinnerTitle);
+        Log.i(TAG, "spinnerTitle: " + spinnerTitle);
         a.recycle();
     }
 
@@ -77,8 +86,8 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
 
     public List<KeyPairBoolData> getSelectedItems() {
         List<KeyPairBoolData> selectedItems = new ArrayList<>();
-        for(KeyPairBoolData item : items){
-            if(item.isSelected()){
+        for (KeyPairBoolData item : items) {
+            if (item.isSelected()) {
                 selectedItems.add(item);
             }
         }
@@ -87,8 +96,8 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
 
     public List<Long> getSelectedIds() {
         List<Long> selectedItemsIds = new ArrayList<>();
-        for(KeyPairBoolData item : items){
-            if(item.isSelected()){
+        for (KeyPairBoolData item : items) {
+            if (item.isSelected()) {
                 selectedItemsIds.add(item.getId());
             }
         }
@@ -126,7 +135,7 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
     @Override
     public boolean performClick() {
 
-        builder = new AlertDialog.Builder(getContext(), R.style.myDialog);
+        builder = new AlertDialog.Builder(getContext());
         builder.setTitle(spinnerTitle);
 
         final LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -171,7 +180,10 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
         });
 
         builder.setOnCancelListener(this);
+
         ad = builder.show();
+        ad.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+
         return true;
     }
 
@@ -244,7 +256,7 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
 
             if (convertView == null) {
                 holder = new ViewHolder();
-                convertView = inflater.inflate(R.layout.item_listview_multiple,  parent, false);
+                convertView = inflater.inflate(R.layout.item_listview_multiple, parent, false);
                 holder.textView = (TextView) convertView.findViewById(R.id.alertTextView);
                 holder.checkBox = (CheckBox) convertView.findViewById(R.id.alertCheckbox);
 
@@ -252,9 +264,13 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
             } else {
                 holder = (ViewHolder) convertView.getTag();
             }
+            int background=R.color.white;
+            if (colorseparation) {
+                final int backgroundColor = (position % 2 == 0) ? R.color.list_even : R.color.list_odd;
+                background=backgroundColor;
+                convertView.setBackgroundColor(ContextCompat.getColor(getContext(), backgroundColor));
+            }
 
-            final int backgroundColor = (position%2 == 0) ? R.color.list_even : R.color.list_odd;
-            convertView.setBackgroundColor(ContextCompat.getColor(getContext(), backgroundColor));
 
             final KeyPairBoolData data = arrayList.get(position);
 
@@ -264,10 +280,10 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
 
             convertView.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
-                    if(data.isSelected()) { // deselect
+                    if (data.isSelected()) { // deselect
                         selected--;
-                    } else if(selected == limit) { // select with limit
-                        if(limitListener != null)
+                    } else if (selected == limit) { // select with limit
+                        if (limitListener != null)
                             limitListener.onLimitListener(data);
                         return;
                     } else { // selected
@@ -286,6 +302,10 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
                 holder.textView.setTypeface(null, Typeface.BOLD);
                 holder.textView.setTextColor(Color.WHITE);
                 convertView.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.list_selected));
+            } else {
+                holder.textView.setTypeface(null, Typeface.NORMAL);
+                holder.textView.setTextColor(Color.GRAY);
+                convertView.setBackgroundColor(ContextCompat.getColor(getContext(), background));
             }
             holder.checkBox.setTag(holder);
 
