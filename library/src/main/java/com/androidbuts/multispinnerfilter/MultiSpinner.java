@@ -15,12 +15,13 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 public class MultiSpinner extends AppCompatSpinner implements OnMultiChoiceClickListener, OnCancelListener {
-
-    private List<String> items;
     private boolean[] selected;
-    private String defaultText = "Select Items";
-    private String spinnerTitle = "";
+    private List<String> items;
+
     private MultiSpinnerListener listener;
+
+    private String spinnerTitle = "";
+    private String defaultText = "Select Items";
 
     public MultiSpinner(Context context) {
         super(context);

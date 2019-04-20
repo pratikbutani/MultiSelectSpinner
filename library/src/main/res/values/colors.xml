@@ -29,7 +29,7 @@
     <color name="list_selected">#455FB6</color>
     <color name="list_header">#99979C</color>
 
-
+    <color name="stroke_border">#D7D7D7</color>
     <!-- FF5722, E64A19-->
 
 </resources>

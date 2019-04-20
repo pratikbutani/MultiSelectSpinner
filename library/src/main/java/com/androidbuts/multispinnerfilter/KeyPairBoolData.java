@@ -1,12 +1,11 @@
 package com.androidbuts.multispinnerfilter;
 
 public class KeyPairBoolData {
+    private long id;
+    private String name;
+    private boolean isSelected;
 
-    long id;
-    String name;
-    boolean isSelected;
-
-    Object object;
+    private Object object;
 
     public Object getObject() {
         return object;

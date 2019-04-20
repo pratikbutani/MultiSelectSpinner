@@ -8,8 +8,11 @@
         android:id="@+id/alertSearchEditText"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/default_border"
         android:hint="@string/type_to_search"
-        android:inputType="text">
+        android:inputType="text"
+        android:padding="5dp">
 
         <requestFocus />
     </EditText>
@@ -36,7 +39,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:gravity="center"
-            android:text="Not found!"
+            android:text="Not Found!"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/red" />
     </RelativeLayout>

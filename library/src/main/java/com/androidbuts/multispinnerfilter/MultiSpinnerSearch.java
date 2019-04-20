@@ -29,44 +29,52 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelListener{
+public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelListener {
     private static final String TAG = MultiSpinnerSearch.class.getSimpleName();
-    private List<KeyPairBoolData> items;
-    private String defaultText = "";
-    private String spinnerTitle = "";
-    private SpinnerListener listener;
-    private int limit = -1;
-    private int selected = 0;
-    private LimitExceedListener limitListener;
-    MyAdapter adapter;
+
     public static AlertDialog.Builder builder;
     public static AlertDialog ad;
-    private boolean colorseparation = false;
 
-    public boolean isColorseparation() {
-        return colorseparation;
+    private int limit = -1;
+    private int selected = 0;
+    private String defaultText = "";
+    private String spinnerTitle = "";
+    private boolean colorSeparation = false;
+
+    private SpinnerListener listener;
+    private LimitExceedListener limitListener;
+
+    private MyAdapter adapter;
+    private List<KeyPairBoolData> items;
+
+    public boolean isColorSeparation() {
+        return colorSeparation;
     }
 
-    public void setColorseparation(boolean colorseparation) {
-        this.colorseparation = colorseparation;
+    public void setColorSeparation(boolean colorSeparation) {
+        this.colorSeparation = colorSeparation;
     }
 
     public MultiSpinnerSearch(Context context) {
         super(context);
     }
-    public String getHintText(){
-       return this.spinnerTitle;
+
+    public String getHintText() {
+        return this.spinnerTitle;
     }
-     public void setHintText(String hibtText){
-       this.spinnerTitle = hibtText;
+
+    public void setHintText(String hintText) {
+        this.spinnerTitle = hintText;
     }
+
     public MultiSpinnerSearch(Context arg0, AttributeSet arg1) {
         super(arg0, arg1);
         TypedArray a = arg0.obtainStyledAttributes(arg1, R.styleable.MultiSpinnerSearch);
         for (int i = 0; i < a.getIndexCount(); ++i) {
             int attr = a.getIndex(i);
             if (attr == R.styleable.MultiSpinnerSearch_hintText) {
-                spinnerTitle = this.setHintText(a.getString(attr));
+                this.setHintText(a.getString(attr));
+                spinnerTitle = this.getHintText();
                 defaultText = spinnerTitle;
                 break;
             }
@@ -264,10 +272,10 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
             } else {
                 holder = (ViewHolder) convertView.getTag();
             }
-            int background=R.color.white;
-            if (colorseparation) {
+            int background = R.color.white;
+            if (colorSeparation) {
                 final int backgroundColor = (position % 2 == 0) ? R.color.list_even : R.color.list_odd;
-                background=backgroundColor;
+                background = backgroundColor;
                 convertView.setBackgroundColor(ContextCompat.getColor(getContext(), backgroundColor));
             }
 
