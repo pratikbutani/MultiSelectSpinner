@@ -47,24 +47,8 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
     private MyAdapter adapter;
     private List<KeyPairBoolData> items;
 
-    public boolean isColorSeparation() {
-        return colorSeparation;
-    }
-
-    public void setColorSeparation(boolean colorSeparation) {
-        this.colorSeparation = colorSeparation;
-    }
-
     public MultiSpinnerSearch(Context context) {
         super(context);
-    }
-
-    public String getHintText() {
-        return this.spinnerTitle;
-    }
-
-    public void setHintText(String hintText) {
-        this.spinnerTitle = hintText;
     }
 
     public MultiSpinnerSearch(Context arg0, AttributeSet arg1) {
@@ -85,6 +69,22 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
 
     public MultiSpinnerSearch(Context arg0, AttributeSet arg1, int arg2) {
         super(arg0, arg1, arg2);
+    }
+
+    public boolean isColorSeparation() {
+        return colorSeparation;
+    }
+
+    public void setColorSeparation(boolean colorSeparation) {
+        this.colorSeparation = colorSeparation;
+    }
+
+    public String getHintText() {
+        return this.spinnerTitle;
+    }
+
+    public void setHintText(String hintText) {
+        this.spinnerTitle = hintText;
     }
 
     public void setLimit(int limit, LimitExceedListener listener) {
@@ -143,24 +143,27 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
     @Override
     public boolean performClick() {
 
+        super.performClick();
         builder = new AlertDialog.Builder(getContext());
         builder.setTitle(spinnerTitle);
+
 
         final LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         final View view = inflater.inflate(R.layout.alert_dialog_listview_search, null);
         builder.setView(view);
 
-        final ListView listView = (ListView) view.findViewById(R.id.alertSearchListView);
+        final ListView listView = view.findViewById(R.id.alertSearchListView);
         listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+
         listView.setFastScrollEnabled(false);
         adapter = new MyAdapter(getContext(), items);
         listView.setAdapter(adapter);
 
-        final TextView emptyText = (TextView) view.findViewById(R.id.empty);
+        final TextView emptyText = view.findViewById(R.id.empty);
         listView.setEmptyView(emptyText);
 
-        final EditText editText = (EditText) view.findViewById(R.id.alertSearchEditText);
+        final EditText editText = view.findViewById(R.id.alertSearchEditText);
         editText.addTextChangedListener(new TextWatcher() {
 
             @Override
@@ -176,6 +179,22 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
             public void afterTextChanged(Editable s) {
             }
         });
+        /*
+        Added Select all Dialog Button.
+         */
+        builder.setNeutralButton(android.R.string.selectAll, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                adapter.arrayList = adapter.mOriginalValues;
+                for (int i = 0; i < adapter.mOriginalValues.size(); i++) {
+                    adapter.arrayList.get(i).setSelected(true);
+                    Log.i(TAG, adapter.mOriginalValues.get(i).getName());
+                }
+                adapter.notifyDataSetChanged();
+
+
+            }
+        });
 
         builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
 
@@ -188,7 +207,6 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
         });
 
         builder.setOnCancelListener(this);
-
         ad = builder.show();
         ad.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
@@ -232,8 +250,9 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
         List<KeyPairBoolData> mOriginalValues; // Original Values
         LayoutInflater inflater;
 
-        public MyAdapter(Context context, List<KeyPairBoolData> arrayList) {
+        MyAdapter(Context context, List<KeyPairBoolData> arrayList) {
             this.arrayList = arrayList;
+            this.mOriginalValues = arrayList;
             inflater = LayoutInflater.from(context);
         }
 
@@ -252,21 +271,16 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
             return position;
         }
 
-        private class ViewHolder {
-            TextView textView;
-            CheckBox checkBox;
-        }
-
         @Override
         public View getView(final int position, View convertView, ViewGroup parent) {
-            Log.i(TAG, "getView() enter");
+//            Log.i(TAG, "getView() enter");
             ViewHolder holder;
 
             if (convertView == null) {
                 holder = new ViewHolder();
                 convertView = inflater.inflate(R.layout.item_listview_multiple, parent, false);
-                holder.textView = (TextView) convertView.findViewById(R.id.alertTextView);
-                holder.checkBox = (CheckBox) convertView.findViewById(R.id.alertCheckbox);
+                holder.textView = convertView.findViewById(R.id.alertTextView);
+                holder.checkBox = convertView.findViewById(R.id.alertCheckbox);
 
                 convertView.setTag(holder);
             } else {
@@ -338,16 +352,13 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
                     FilterResults results = new FilterResults();        // Holds the results of a filtering operation in values
                     List<KeyPairBoolData> FilteredArrList = new ArrayList<>();
 
-                    if (mOriginalValues == null) {
-                        mOriginalValues = new ArrayList<>(arrayList); // saves the original data in mOriginalValues
-                    }
 
-                    /********
+                    /*
                      *
                      *  If constraint(CharSequence that is received) is null returns the mOriginalValues(Original) values
                      *  else does the Filtering and returns FilteredArrList(Filtered)
                      *
-                     ********/
+                     **/
                     if (constraint == null || constraint.length() == 0) {
 
                         // set the Original result to return
@@ -369,6 +380,11 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
                     return results;
                 }
             };
+        }
+
+        private class ViewHolder {
+            TextView textView;
+            CheckBox checkBox;
         }
     }
 }
