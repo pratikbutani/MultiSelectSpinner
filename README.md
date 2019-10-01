@@ -110,5 +110,5 @@
         });
 	
 	
-### (Optional) Add Colorseparation to the list
+### (Optional) Add Color Separation to the list
 	searchSpinner.setColorseparation(true);
