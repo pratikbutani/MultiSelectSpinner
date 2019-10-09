@@ -29,22 +29,16 @@ import java.util.List;
 
 public class SingleSpinnerSearch extends android.support.v7.widget.AppCompatSpinner implements OnCancelListener {
     private static final String TAG = SingleSpinnerSearch.class.getSimpleName();
+    public static AlertDialog.Builder builder;
+    public static AlertDialog ad;
+    MyAdapter adapter;
     private List<KeyPairBoolData> items;
     private String defaultText = "";
     private String spinnerTitle = "";
+    private String emptyTitle = "Not Found!";
+    private String searchHint = "Type to search";
     private SpinnerListener listener;
-    MyAdapter adapter;
-    public static AlertDialog.Builder builder;
-    public static AlertDialog ad;
     private boolean colorseparation = false;
-
-    public boolean isColorseparation() {
-        return colorseparation;
-    }
-
-    public void setColorseparation(boolean colorseparation) {
-        this.colorseparation = colorseparation;
-    }
 
     public SingleSpinnerSearch(Context context) {
         super(context);
@@ -70,6 +64,13 @@ public class SingleSpinnerSearch extends android.support.v7.widget.AppCompatSpin
         super(arg0, arg1, arg2);
     }
 
+    public boolean isColorseparation() {
+        return colorseparation;
+    }
+
+    public void setColorseparation(boolean colorseparation) {
+        this.colorseparation = colorseparation;
+    }
 
     public List<KeyPairBoolData> getSelectedItems() {
         List<KeyPairBoolData> selectedItems = new ArrayList<>();
@@ -139,9 +140,11 @@ public class SingleSpinnerSearch extends android.support.v7.widget.AppCompatSpin
             }
         }
         final TextView emptyText = (TextView) view.findViewById(R.id.empty);
+        emptyText.setText(emptyTitle);
         listView.setEmptyView(emptyText);
 
         EditText editText = (EditText) view.findViewById(R.id.alertSearchEditText);
+        editText.setHint(searchHint);
         editText.addTextChangedListener(new TextWatcher() {
 
             @Override
@@ -195,6 +198,13 @@ public class SingleSpinnerSearch extends android.support.v7.widget.AppCompatSpin
         }
     }
 
+    public void setEmptyTitle(String emptyTitle) {
+        this.emptyTitle = emptyTitle;
+    }
+
+    public void setSearchHint(String searchHint) {
+        this.searchHint = searchHint;
+    }
 
     //Adapter Class
     public class MyAdapter extends BaseAdapter implements Filterable {
@@ -221,10 +231,6 @@ public class SingleSpinnerSearch extends android.support.v7.widget.AppCompatSpin
         @Override
         public long getItemId(int position) {
             return position;
-        }
-
-        private class ViewHolder {
-            TextView textView;
         }
 
         @Override
@@ -319,6 +325,10 @@ public class SingleSpinnerSearch extends android.support.v7.widget.AppCompatSpin
                     return results;
                 }
             };
+        }
+
+        private class ViewHolder {
+            TextView textView;
         }
     }
 }
