@@ -22,6 +22,7 @@ public class MultiSpinner extends AppCompatSpinner implements OnMultiChoiceClick
 
     private String spinnerTitle = "";
     private String defaultText = "Select Items";
+    private String emptyTitle = "Not Found!";
 
     public MultiSpinner(Context context) {
         super(context);

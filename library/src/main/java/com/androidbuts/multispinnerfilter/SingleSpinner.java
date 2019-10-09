@@ -27,6 +27,8 @@ public class SingleSpinner extends android.support.v7.widget.AppCompatSpinner im
     private List<KeyPairBoolData> items;
     private String defaultText = "";
     private String spinnerTitle = "";
+    private String emptyTitle = "Not Found!";
+    private String searchHint = "Type to search";
     private SpinnerListener listener;
     MyAdapter adapter;
     public static AlertDialog.Builder builder;
@@ -128,9 +130,11 @@ public class SingleSpinner extends android.support.v7.widget.AppCompatSpinner im
 
         listView.setAdapter(adapter);
         final TextView emptyText = (TextView) view.findViewById(R.id.empty);
+        emptyText.setText(emptyTitle);
         listView.setEmptyView(emptyText);
 
         EditText editText = (EditText) view.findViewById(R.id.alertSearchEditText);
+        editText.setHint(searchHint);
         editText.setVisibility(GONE);
 
         builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
@@ -170,7 +174,13 @@ public class SingleSpinner extends android.support.v7.widget.AppCompatSpinner im
         }
     }
 
+    public void setEmptyTitle(String emptyTitle) {
+        this.emptyTitle = emptyTitle;
+    }
 
+    public void setSearchHint(String searchHint) {
+        this.searchHint = searchHint;
+    }
 
     //Adapter Class
     public class MyAdapter extends BaseAdapter {

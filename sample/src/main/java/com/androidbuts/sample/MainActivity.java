@@ -91,6 +91,9 @@ public class MainActivity extends AppCompatActivity {
         SingleSpinnerSearch searchSingleSpinner = (SingleSpinnerSearch) findViewById(R.id.searchSingleSpinner);
         SingleSpinner singleSpinner = (SingleSpinner) findViewById(R.id.singleSpinner);
 
+        searchMultiSpinnerUnlimited.setEmptyTitle("Not Data Found!");
+        searchMultiSpinnerUnlimited.setSearchHint("Find Data");
+
         searchMultiSpinnerUnlimited.setItems(listArray0, -1, new SpinnerListener() {
 
             @Override

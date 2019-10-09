@@ -39,6 +39,8 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
     private int selected = 0;
     private String defaultText = "";
     private String spinnerTitle = "";
+    private String emptyTitle = "Not Found!";
+    private String searchHint = "Type to search";
     private boolean colorSeparation = false;
 
     private SpinnerListener listener;
@@ -161,9 +163,11 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
         listView.setAdapter(adapter);
 
         final TextView emptyText = view.findViewById(R.id.empty);
+        emptyText.setText(emptyTitle);
         listView.setEmptyView(emptyText);
 
         final EditText editText = view.findViewById(R.id.alertSearchEditText);
+        editText.setHint(searchHint);
         editText.addTextChangedListener(new TextWatcher() {
 
             @Override
@@ -237,6 +241,14 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
             //listener.onItemsSelected(items);
             onCancel(null);
         }
+    }
+
+    public void setEmptyTitle(String emptyTitle) {
+        this.emptyTitle = emptyTitle;
+    }
+
+    public void setSearchHint(String searchHint) {
+        this.searchHint = searchHint;
     }
 
     public interface LimitExceedListener {
