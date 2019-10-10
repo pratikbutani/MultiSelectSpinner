@@ -13,7 +13,6 @@ import android.support.v7.widget.AppCompatSpinner;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,7 +64,7 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
                 break;
             }
         }
-        Log.i(TAG, "spinnerTitle: " + spinnerTitle);
+        //Log.i(TAG, "spinnerTitle: " + spinnerTitle);
         a.recycle();
     }
 
@@ -192,7 +191,7 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
                 adapter.arrayList = adapter.mOriginalValues;
                 for (int i = 0; i < adapter.mOriginalValues.size(); i++) {
                     adapter.arrayList.get(i).setSelected(true);
-                    Log.i(TAG, adapter.mOriginalValues.get(i).getName());
+                    //Log.i(TAG, adapter.mOriginalValues.get(i).getName());
                 }
                 adapter.notifyDataSetChanged();
 
@@ -205,7 +204,7 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
-                Log.i(TAG, " ITEMS : " + items.size());
+                //Log.i(TAG, " ITEMS : " + items.size());
                 dialog.cancel();
             }
         });
@@ -285,7 +284,7 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
 
         @Override
         public View getView(final int position, View convertView, ViewGroup parent) {
-//            Log.i(TAG, "getView() enter");
+//            //Log.i(TAG, "getView() enter");
             ViewHolder holder;
 
             if (convertView == null) {
@@ -328,7 +327,7 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
                     temp.checkBox.setChecked(!temp.checkBox.isChecked());
 
                     data.setSelected(!data.isSelected());
-                    Log.i(TAG, "On Click Selected Item : " + data.getName() + " : " + data.isSelected());
+                    //Log.i(TAG, "On Click Selected Item : " + data.getName() + " : " + data.isSelected());
                     notifyDataSetChanged();
                 }
             });
@@ -379,7 +378,7 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
                     } else {
                         constraint = constraint.toString().toLowerCase();
                         for (int i = 0; i < mOriginalValues.size(); i++) {
-                            Log.i(TAG, "Filter : " + mOriginalValues.get(i).getName() + " -> " + mOriginalValues.get(i).isSelected());
+                            //Log.i(TAG, "Filter : " + mOriginalValues.get(i).getName() + " -> " + mOriginalValues.get(i).isSelected()); 
                             String data = mOriginalValues.get(i).getName();
                             if (data.toLowerCase().contains(constraint.toString())) {
                                 FilteredArrList.add(mOriginalValues.get(i));

@@ -9,7 +9,6 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,26 +21,18 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SingleSpinner extends android.support.v7.widget.AppCompatSpinner implements OnCancelListener  {
+public class SingleSpinner extends android.support.v7.widget.AppCompatSpinner implements OnCancelListener {
     private static final String TAG = SingleSpinner.class.getSimpleName();
+    public static AlertDialog.Builder builder;
+    public static AlertDialog ad;
+    MyAdapter adapter;
     private List<KeyPairBoolData> items;
     private String defaultText = "";
     private String spinnerTitle = "";
     private String emptyTitle = "Not Found!";
     private String searchHint = "Type to search";
     private SpinnerListener listener;
-    MyAdapter adapter;
-    public static AlertDialog.Builder builder;
-    public static AlertDialog ad;
     private boolean colorseparation = false;
-
-    public boolean isColorseparation() {
-        return colorseparation;
-    }
-
-    public void setColorseparation(boolean colorseparation) {
-        this.colorseparation = colorseparation;
-    }
 
     public SingleSpinner(Context context) {
         super(context);
@@ -59,7 +50,7 @@ public class SingleSpinner extends android.support.v7.widget.AppCompatSpinner im
                 break;
             }
         }
-        Log.i(TAG, "spinnerTitle: " + spinnerTitle);
+        //Log.i(TAG, "spinnerTitle: " + spinnerTitle);
         a.recycle();
     }
 
@@ -67,6 +58,13 @@ public class SingleSpinner extends android.support.v7.widget.AppCompatSpinner im
         super(arg0, arg1, arg2);
     }
 
+    public boolean isColorseparation() {
+        return colorseparation;
+    }
+
+    public void setColorseparation(boolean colorseparation) {
+        this.colorseparation = colorseparation;
+    }
 
     public List<KeyPairBoolData> getSelectedItems() {
         List<KeyPairBoolData> selectedItems = new ArrayList<>();
@@ -142,7 +140,7 @@ public class SingleSpinner extends android.support.v7.widget.AppCompatSpinner im
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
-                Log.i(TAG, " ITEMS : " + items.size());
+                //Log.i(TAG, " ITEMS : " + items.size());
                 dialog.cancel();
             }
         });
@@ -208,13 +206,9 @@ public class SingleSpinner extends android.support.v7.widget.AppCompatSpinner im
             return position;
         }
 
-        private class ViewHolder {
-            TextView textView;
-        }
-
         @Override
         public View getView(final int position, View convertView, ViewGroup parent) {
-            Log.i(TAG, "getView() enter");
+            //Log.i(TAG, "getView() enter");
             ViewHolder holder = new ViewHolder();
             convertView = inflater.inflate(R.layout.item_listview_single, parent, false);
             holder.textView = (TextView) convertView.findViewById(R.id.alertTextView);
@@ -239,7 +233,7 @@ public class SingleSpinner extends android.support.v7.widget.AppCompatSpinner im
                         arrayList.get(i).setSelected(false);
                         if (i == position) {
                             arrayList.get(i).setSelected(true);
-                            Log.i(TAG, "On Click Selected Item : " + arrayList.get(i).getName() + " : " + arrayList.get(i).isSelected());
+                            //Log.i(TAG, "On Click Selected Item : " + arrayList.get(i).getName() + " : " + arrayList.get(i).isSelected());
                         }
                     }
                     ad.dismiss();
@@ -253,6 +247,10 @@ public class SingleSpinner extends android.support.v7.widget.AppCompatSpinner im
                 convertView.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.list_selected));
             }
             return convertView;
+        }
+
+        private class ViewHolder {
+            TextView textView;
         }
     }
 }

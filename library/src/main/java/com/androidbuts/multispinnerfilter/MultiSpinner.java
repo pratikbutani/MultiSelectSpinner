@@ -78,6 +78,7 @@ public class MultiSpinner extends AppCompatSpinner implements OnMultiChoiceClick
 
     @Override
     public boolean performClick() {
+        super.performClick();
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext(), R.style.myDialog);
         builder.setTitle(spinnerTitle);
         builder.setMultiChoiceItems(
