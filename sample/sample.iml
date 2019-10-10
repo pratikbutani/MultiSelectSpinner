@@ -103,5 +103,6 @@
     <orderEntry type="library" name="Gradle: com.android.support:support-compat:27.0.2@aar" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:runtime:1.0.3@aar" level="project" />
     <orderEntry type="module" module-name="library" />
+    <orderEntry type="module" module-name="library" />
   </component>
 </module>
