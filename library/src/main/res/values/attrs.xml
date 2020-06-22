@@ -6,6 +6,7 @@
         <attr name="addSelectAll" format="boolean" />
         <attr name="addSearch" format="boolean" />
         <attr name="highlightColor" format="color" />
+        <attr name="selectedTextColor" format="color" />
         <attr name="textColor" format="color" />
     </declare-styleable>
 </resources>

@@ -39,6 +39,7 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
     private boolean highlightSelected = false;
     private int highlightColor = ContextCompat.getColor(getContext(), R.color.list_selected);
     private int textColor = Color.GRAY;
+    private int selectedTextColor = Color.GRAY;
     private int limit = -1;
     private int selected = 0;
     private String defaultText = "";
@@ -73,6 +74,8 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
                 highlightColor = a.getColor(attr, ContextCompat.getColor(getContext(), R.color.list_selected));
             }else if (attr == R.styleable.MultiSpinnerSearch_textColor){
                 textColor = a.getColor(attr, Color.GRAY);
+            }else if (attr == R.styleable.MultiSpinnerSearch_selectedTextColor){
+                selectedTextColor = a.getColor(attr, Color.GRAY);
             }else if (attr == R.styleable.MultiSpinnerSearch_addSelectAll){
                 addSelectAll = a.getBoolean(attr, false);
             }else if (attr == R.styleable.MultiSpinnerSearch_addSearch){
@@ -362,7 +365,7 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
                     convertView.setBackgroundColor(Color.WHITE);
                 }
             } else {
-                holder.textView.setTypeface(null, Typeface.NORMAL);
+                holder.textView.setTypeface(null, Typeface.NORMAL); 
                 convertView.setBackgroundColor(ContextCompat.getColor(getContext(), background));
             }
             holder.checkBox.setTag(holder);

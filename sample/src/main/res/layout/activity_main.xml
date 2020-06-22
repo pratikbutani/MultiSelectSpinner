@@ -30,6 +30,8 @@
         app:highlightColor="@color/red"
         app:addSelectAll="false"
         app:addSearch="false"
+        app:textColor="@color/gray"
+        app:selectedTextColor="@color/gray"
         app:hintText="Multi Selection With Filter And Limit" />
 
     <com.androidbuts.multispinnerfilter.SingleSpinnerSearch
