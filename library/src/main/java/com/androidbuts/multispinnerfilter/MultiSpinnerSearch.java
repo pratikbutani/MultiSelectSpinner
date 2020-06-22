@@ -357,7 +357,7 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
             });
 
             if (data.isSelected()) {
-                holder.textView.setTextColor(textColor);
+                holder.textView.setTextColor(selectedTextColor);
                 if (highlightSelected){
                     holder.textView.setTypeface(null, Typeface.BOLD);
                     convertView.setBackgroundColor(highlightColor);
@@ -365,7 +365,8 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
                     convertView.setBackgroundColor(Color.WHITE);
                 }
             } else {
-                holder.textView.setTypeface(null, Typeface.NORMAL); 
+                holder.textView.setTextColor(textColor);
+                holder.textView.setTypeface(null, Typeface.NORMAL);
                 convertView.setBackgroundColor(ContextCompat.getColor(getContext(), background));
             }
             holder.checkBox.setTag(holder);
