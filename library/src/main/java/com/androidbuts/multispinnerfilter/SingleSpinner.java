@@ -7,7 +7,7 @@ import android.content.DialogInterface.OnCancelListener;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.support.v4.content.ContextCompat;
+import androidx.core.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,7 +21,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SingleSpinner extends android.support.v7.widget.AppCompatSpinner implements OnCancelListener {
+public class SingleSpinner extends androidx.appcompat.widget.AppCompatSpinner implements OnCancelListener {
     private static final String TAG = SingleSpinner.class.getSimpleName();
     public static AlertDialog.Builder builder;
     public static AlertDialog ad;

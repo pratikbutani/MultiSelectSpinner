@@ -8,8 +8,8 @@ import android.content.DialogInterface.OnCancelListener;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.AppCompatSpinner;
+import androidx.core.content.ContextCompat;
+import androidx.appcompat.widget.AppCompatSpinner;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
@@ -34,6 +34,9 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
     public static AlertDialog.Builder builder;
     public static AlertDialog ad;
 
+    private boolean highlightSelected = false;
+    private int highlightColor = ContextCompat.getColor(getContext(), R.color.list_selected);
+    private int textColor = Color.GRAY;
     private int limit = -1;
     private int selected = 0;
     private String defaultText = "";
@@ -62,6 +65,12 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
                 spinnerTitle = this.getHintText();
                 defaultText = spinnerTitle;
                 break;
+            }else if (attr == R.styleable.MultiSpinnerSearch_highlightSelected){
+                highlightSelected = a.getBoolean(attr, false);
+            }else if (attr == R.styleable.MultiSpinnerSearch_highlightColor){
+                highlightColor = a.getColor(attr, ContextCompat.getColor(getContext(), R.color.list_selected));
+            }else if (attr == R.styleable.MultiSpinnerSearch_textColor){
+                textColor = a.getColor(attr, Color.GRAY);
             }
         }
         //Log.i(TAG, "spinnerTitle: " + spinnerTitle);
@@ -331,13 +340,17 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
                     notifyDataSetChanged();
                 }
             });
+
             if (data.isSelected()) {
-                holder.textView.setTypeface(null, Typeface.BOLD);
-                holder.textView.setTextColor(Color.WHITE);
-                convertView.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.list_selected));
+                holder.textView.setTextColor(textColor);
+                if (highlightSelected){
+                    holder.textView.setTypeface(null, Typeface.BOLD);
+                    convertView.setBackgroundColor(highlightColor);
+                }else {
+                    convertView.setBackgroundColor(Color.WHITE);
+                }
             } else {
                 holder.textView.setTypeface(null, Typeface.NORMAL);
-                holder.textView.setTextColor(Color.GRAY);
                 convertView.setBackgroundColor(ContextCompat.getColor(getContext(), background));
             }
             holder.checkBox.setTag(holder);
