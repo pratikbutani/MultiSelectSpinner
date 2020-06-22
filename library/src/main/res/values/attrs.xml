@@ -3,6 +3,8 @@
     <declare-styleable name="MultiSpinnerSearch">
         <attr name="hintText" format="string" />
         <attr name="highlightSelected" format="boolean" />
+        <attr name="addSelectAll" format="boolean" />
+        <attr name="addSearch" format="boolean" />
         <attr name="highlightColor" format="color" />
         <attr name="textColor" format="color" />
     </declare-styleable>

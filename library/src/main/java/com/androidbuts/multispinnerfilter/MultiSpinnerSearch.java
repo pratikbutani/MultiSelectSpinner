@@ -34,6 +34,8 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
     public static AlertDialog.Builder builder;
     public static AlertDialog ad;
 
+    private boolean addSearch = false;
+    private boolean addSelectAll = false;
     private boolean highlightSelected = false;
     private int highlightColor = ContextCompat.getColor(getContext(), R.color.list_selected);
     private int textColor = Color.GRAY;
@@ -71,6 +73,10 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
                 highlightColor = a.getColor(attr, ContextCompat.getColor(getContext(), R.color.list_selected));
             }else if (attr == R.styleable.MultiSpinnerSearch_textColor){
                 textColor = a.getColor(attr, Color.GRAY);
+            }else if (attr == R.styleable.MultiSpinnerSearch_addSelectAll){
+                addSelectAll = a.getBoolean(attr, false);
+            }else if (attr == R.styleable.MultiSpinnerSearch_addSearch){
+                addSearch = a.getBoolean(attr, false);
             }
         }
         //Log.i(TAG, "spinnerTitle: " + spinnerTitle);
@@ -157,7 +163,6 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
         builder = new AlertDialog.Builder(getContext());
         builder.setTitle(spinnerTitle);
 
-
         final LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         final View view = inflater.inflate(R.layout.alert_dialog_listview_search, null);
@@ -175,6 +180,11 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
         listView.setEmptyView(emptyText);
 
         final EditText editText = view.findViewById(R.id.alertSearchEditText);
+        if (addSearch){
+            editText.setVisibility(VISIBLE);
+        }else {
+            editText.setVisibility(GONE);
+        }
         editText.setHint(searchHint);
         editText.addTextChangedListener(new TextWatcher() {
 
@@ -194,19 +204,21 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
         /*
         Added Select all Dialog Button.
          */
-        builder.setNeutralButton(android.R.string.selectAll, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                adapter.arrayList = adapter.mOriginalValues;
-                for (int i = 0; i < adapter.mOriginalValues.size(); i++) {
-                    adapter.arrayList.get(i).setSelected(true);
-                    //Log.i(TAG, adapter.mOriginalValues.get(i).getName());
+        if (addSelectAll){
+            builder.setNeutralButton(android.R.string.selectAll, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    adapter.arrayList = adapter.mOriginalValues;
+                    for (int i = 0; i < adapter.mOriginalValues.size(); i++) {
+                        adapter.arrayList.get(i).setSelected(true);
+                        //Log.i(TAG, adapter.mOriginalValues.get(i).getName());
+                    }
+                    adapter.notifyDataSetChanged();
+
+
                 }
-                adapter.notifyDataSetChanged();
-
-
-            }
-        });
+            });
+        }
 
         builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
 
