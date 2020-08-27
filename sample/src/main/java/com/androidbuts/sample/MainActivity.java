@@ -1,9 +1,10 @@
 package com.androidbuts.sample;
 
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.androidbuts.multispinnerfilter.KeyPairBoolData;
 import com.androidbuts.multispinnerfilter.MultiSpinnerSearch;
@@ -16,146 +17,131 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    private static final String TAG = "MainActivity";
+	private static final String TAG = "MainActivity";
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
 
-        /**
-         * Getting array of String to Bind in Spinner
-         */
-        final List<String> list = Arrays.asList(getResources().getStringArray(R.array.sports_array));
+		/**
+		 * Getting array of String to Bind in Spinner
+		 */
+		final List<String> list = Arrays.asList(getResources().getStringArray(R.array.sports_array));
 
-        final List<KeyPairBoolData> listArray0 = new ArrayList<>();
+		final List<KeyPairBoolData> listArray0 = new ArrayList<>();
 
-        for (int i = 0; i < list.size(); i++) {
-            KeyPairBoolData h = new KeyPairBoolData();
-            h.setId(i + 1);
-            h.setName(list.get(i));
-            h.setSelected(false);
-            listArray0.add(h);
-        }
+		for (int i = 0; i < list.size(); i++) {
+			KeyPairBoolData h = new KeyPairBoolData();
+			h.setId(i + 1);
+			h.setName(list.get(i));
+			h.setSelected(false);
+			listArray0.add(h);
+		}
 
-        final List<KeyPairBoolData> listArray1 = new ArrayList<>();
+		final List<KeyPairBoolData> listArray1 = new ArrayList<>();
 
-        for (int i = 0; i < list.size(); i++) {
-            KeyPairBoolData h = new KeyPairBoolData();
-            h.setId(i + 1);
-            h.setName(list.get(i));
-            h.setSelected(false);
-            listArray1.add(h);
-        }
+		for (int i = 0; i < list.size(); i++) {
+			KeyPairBoolData h = new KeyPairBoolData();
+			h.setId(i + 1);
+			h.setName(list.get(i));
+			h.setSelected(false);
+			listArray1.add(h);
+		}
 
-        final List<KeyPairBoolData> listArray2 = new ArrayList<>();
+		final List<KeyPairBoolData> listArray2 = new ArrayList<>();
 
-        for (int i = 0; i < list.size(); i++) {
-            KeyPairBoolData h = new KeyPairBoolData();
-            h.setId(i + 1);
-            h.setName(list.get(i));
-            h.setSelected(false);
-            listArray2.add(h);
-        }
-        final List<KeyPairBoolData> listArray3 = new ArrayList<>();
+		for (int i = 0; i < list.size(); i++) {
+			KeyPairBoolData h = new KeyPairBoolData();
+			h.setId(i + 1);
+			h.setName(list.get(i));
+			h.setSelected(false);
+			listArray2.add(h);
+		}
+		final List<KeyPairBoolData> listArray3 = new ArrayList<>();
 
-        for (int i = 0; i < list.size(); i++) {
-            KeyPairBoolData h = new KeyPairBoolData();
-            h.setId(i + 1);
-            h.setName(list.get(i));
-            h.setSelected(false);
-            listArray3.add(h);
-        }
-        /**
-         * Simple MultiSelection Spinner (Without Search/Filter Functionality)
-         *
-         *  Using MultiSpinner class
-         */
-        /*MultiSpinner simpleSpinner = (MultiSpinner) findViewById(R.id.simpleMultiSpinner);
+		for (int i = 0; i < list.size(); i++) {
+			KeyPairBoolData h = new KeyPairBoolData();
+			h.setId(i + 1);
+			h.setName(list.get(i));
+			h.setSelected(false);
+			listArray3.add(h);
+		}
 
-        simpleSpinner.setItems(listArray0, -1, new MultiSpinnerListener() {
+		/**
+		 * Search MultiSelection Spinner (With Search/Filter Functionality)
+		 *
+		 *  Using MultiSpinnerSearch class
+		 */
+		MultiSpinnerSearch searchMultiSpinnerUnlimited = findViewById(R.id.searchMultiSpinnerUnlimited);
+		MultiSpinnerSearch searchMultiSpinnerLimit = findViewById(R.id.searchMultiSpinnerLimit);
+		SingleSpinnerSearch searchSingleSpinner = findViewById(R.id.searchSingleSpinner);
+		SingleSpinner singleSpinner = findViewById(R.id.singleSpinner);
 
-            @Override
-            public void onItemsSelected(boolean[] selected) {
-            }
+		searchMultiSpinnerUnlimited.setEmptyTitle("Not Data Found!");
+		searchMultiSpinnerUnlimited.setSearchHint("Find Data");
+		searchMultiSpinnerUnlimited.setShowSelectAllButton(false);
+		searchMultiSpinnerUnlimited.setItems(listArray0, -1, new SpinnerListener() {
 
-        });*/
+			@Override
+			public void onItemsSelected(List<KeyPairBoolData> items) {
 
-        /**
-         * Search MultiSelection Spinner (With Search/Filter Functionality)
-         *
-         *  Using MultiSpinnerSearch class
-         */
-        MultiSpinnerSearch searchMultiSpinnerUnlimited = (MultiSpinnerSearch) findViewById(R.id.searchMultiSpinnerUnlimited);
-        MultiSpinnerSearch searchMultiSpinnerLimit = (MultiSpinnerSearch) findViewById(R.id.searchMultiSpinnerLimit);
-        SingleSpinnerSearch searchSingleSpinner = (SingleSpinnerSearch) findViewById(R.id.searchSingleSpinner);
-        SingleSpinner singleSpinner = (SingleSpinner) findViewById(R.id.singleSpinner);
+				for (int i = 0; i < items.size(); i++) {
+					if (items.get(i).isSelected()) {
+						Log.i(TAG, i + " : " + items.get(i).getName() + " : " + items.get(i).isSelected());
+					}
+				}
+			}
+		});
 
-        searchMultiSpinnerUnlimited.setEmptyTitle("Not Data Found!");
-        searchMultiSpinnerUnlimited.setSearchHint("Find Data");
+		/***
+		 * -1 is no by default selection
+		 * 0 to length will select corresponding values
+		 */
+		searchMultiSpinnerLimit.setItems(listArray1, -1, new SpinnerListener() {
+			@Override
+			public void onItemsSelected(List<KeyPairBoolData> items) {
+				for (int i = 0; i < items.size(); i++) {
+					if (items.get(i).isSelected()) {
+						Log.i(TAG, i + " : " + items.get(i).getName() + " : " + items.get(i).isSelected());
+					}
+				}
+			}
+		});
 
-        searchMultiSpinnerUnlimited.setItems(listArray0, -1, new SpinnerListener() {
+		searchMultiSpinnerLimit.setLimit(2, new MultiSpinnerSearch.LimitExceedListener() {
+			@Override
+			public void onLimitListener(KeyPairBoolData data) {
+				Toast.makeText(getApplicationContext(),
+						"Limit exceed ", Toast.LENGTH_LONG).show();
+			}
+		});
+		searchSingleSpinner.setColorseparation(true);
 
-            @Override
-            public void onItemsSelected(List<KeyPairBoolData> items) {
+		searchSingleSpinner.setItems(listArray2, -1, new SpinnerListener() {
 
-                for (int i = 0; i < items.size(); i++) {
-                    if (items.get(i).isSelected()) {
-                        Log.i(TAG, i + " : " + items.get(i).getName() + " : " + items.get(i).isSelected());
-                    }
-                }
-            }
-        });
+			@Override
+			public void onItemsSelected(List<KeyPairBoolData> items) {
 
-        /***
-         * -1 is no by default selection
-         * 0 to length will select corresponding values
-         */
-        searchMultiSpinnerLimit.setItems(listArray1, -1, new SpinnerListener() {
+				for (int i = 0; i < items.size(); i++) {
+					if (items.get(i).isSelected()) {
+						Log.i(TAG, i + " : " + items.get(i).getName() + " : " + items.get(i).isSelected());
+					}
+				}
+			}
+		});
 
-            @Override
-            public void onItemsSelected(List<KeyPairBoolData> items) {
+		singleSpinner.setItems(listArray3, -1, new SpinnerListener() {
 
-                for (int i = 0; i < items.size(); i++) {
-                    if (items.get(i).isSelected()) {
-                        Log.i(TAG, i + " : " + items.get(i).getName() + " : " + items.get(i).isSelected());
-                    }
-                }
-            }
-        });
+			@Override
+			public void onItemsSelected(List<KeyPairBoolData> items) {
 
-        searchMultiSpinnerLimit.setLimit(2, new MultiSpinnerSearch.LimitExceedListener() {
-            @Override
-            public void onLimitListener(KeyPairBoolData data) {
-                Toast.makeText(getApplicationContext(),
-                        "Limit exceed ", Toast.LENGTH_LONG).show();
-            }
-        });
-        searchSingleSpinner.setColorseparation(true);
-        searchSingleSpinner.setItems(listArray2, -1, new SpinnerListener() {
-
-            @Override
-            public void onItemsSelected(List<KeyPairBoolData> items) {
-
-                for (int i = 0; i < items.size(); i++) {
-                    if (items.get(i).isSelected()) {
-                        Log.i(TAG, i + " : " + items.get(i).getName() + " : " + items.get(i).isSelected());
-                    }
-                }
-            }
-        });
-
-        singleSpinner.setItems(listArray3, -1, new SpinnerListener() {
-
-            @Override
-            public void onItemsSelected(List<KeyPairBoolData> items) {
-
-                for (int i = 0; i < items.size(); i++) {
-                    if (items.get(i).isSelected()) {
-                        Log.i(TAG, i + " : " + items.get(i).getName() + " : " + items.get(i).isSelected());
-                    }
-                }
-            }
-        });
-    }
+				for (int i = 0; i < items.size(); i++) {
+					if (items.get(i).isSelected()) {
+						Log.i(TAG, i + " : " + items.get(i).getName() + " : " + items.get(i).isSelected());
+					}
+				}
+			}
+		});
+	}
 }

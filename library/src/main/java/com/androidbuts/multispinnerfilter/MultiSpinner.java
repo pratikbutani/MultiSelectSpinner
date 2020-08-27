@@ -6,119 +6,122 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 import android.content.DialogInterface.OnMultiChoiceClickListener;
 import android.content.res.TypedArray;
-import androidx.appcompat.widget.AppCompatSpinner;
 import android.util.AttributeSet;
 import android.widget.ArrayAdapter;
+
+import androidx.appcompat.widget.AppCompatSpinner;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 
 public class MultiSpinner extends AppCompatSpinner implements OnMultiChoiceClickListener, OnCancelListener {
-    private boolean[] selected;
-    private List<String> items;
 
-    private MultiSpinnerListener listener;
 
-    private String spinnerTitle = "";
-    private String defaultText = "Select Items";
-    private String emptyTitle = "Not Found!";
+	private boolean[] selected;
+	private List<String> items;
 
-    public MultiSpinner(Context context) {
-        super(context);
-    }
+	private MultiSpinnerListener listener;
 
-    public MultiSpinner(Context arg0, AttributeSet arg1) {
-        super(arg0, arg1);
-        TypedArray a = arg0.obtainStyledAttributes(arg1, R.styleable.MultiSpinnerSearch);
-        final int N = a.getIndexCount();
-        for (int i = 0; i < N; ++i) {
-            int attr = a.getIndex(i);
-            if (attr == R.styleable.MultiSpinnerSearch_hintText) {
-                spinnerTitle = a.getString(attr);
-            }
-        }
-        a.recycle();
-    }
+	private String spinnerTitle = "";
+	private String defaultText = "Select Items";
+	private String emptyTitle = "Not Found!";
 
-    public MultiSpinner(Context arg0, AttributeSet arg1, int arg2) {
-        super(arg0, arg1, arg2);
-    }
+	public MultiSpinner(Context context) {
+		super(context);
+	}
 
-    @Override
-    public void onClick(DialogInterface dialog, int which, boolean isChecked) {
-        selected[which] = isChecked;
-    }
+	public MultiSpinner(Context arg0, AttributeSet arg1) {
+		super(arg0, arg1);
+		TypedArray a = arg0.obtainStyledAttributes(arg1, R.styleable.MultiSpinnerSearch);
+		final int N = a.getIndexCount();
+		for (int i = 0; i < N; ++i) {
+			int attr = a.getIndex(i);
+			if (attr == R.styleable.MultiSpinnerSearch_hintText) {
+				spinnerTitle = a.getString(attr);
+			}
+		}
+		a.recycle();
+	}
 
-    @Override
-    public void onCancel(DialogInterface dialog) {
-        // refresh text on spinner
-        StringBuilder spinnerBuffer = new StringBuilder();
-        for (int i = 0; i < items.size(); i++) {
-            if (selected[i]) {
-                spinnerBuffer.append(items.get(i));
-                spinnerBuffer.append(", ");
-            }
-        }
+	public MultiSpinner(Context arg0, AttributeSet arg1, int arg2) {
+		super(arg0, arg1, arg2);
+	}
 
-        String spinnerText = spinnerBuffer.toString();
-        if (spinnerText.length() > 2) {
-            spinnerText = spinnerText.substring(0, spinnerText.length() - 2);
-        } else {
-            spinnerText = defaultText;
-        }
+	@Override
+	public void onClick(DialogInterface dialog, int which, boolean isChecked) {
+		selected[which] = isChecked;
+	}
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), R.layout.textview_for_spinner, new String[]{spinnerText});
-        setAdapter(adapter);
-        if (selected.length > 0) {
-            listener.onItemsSelected(selected);
-        }
+	@Override
+	public void onCancel(DialogInterface dialog) {
+		// refresh text on spinner
+		StringBuilder spinnerBuffer = new StringBuilder();
+		for (int i = 0; i < items.size(); i++) {
+			if (selected[i]) {
+				spinnerBuffer.append(items.get(i));
+				spinnerBuffer.append(", ");
+			}
+		}
 
-    }
+		String spinnerText = spinnerBuffer.toString();
+		if (spinnerText.length() > 2) {
+			spinnerText = spinnerText.substring(0, spinnerText.length() - 2);
+		} else {
+			spinnerText = defaultText;
+		}
 
-    @Override
-    public boolean performClick() {
-        super.performClick();
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext(), R.style.myDialog);
-        builder.setTitle(spinnerTitle);
-        builder.setMultiChoiceItems(
-                items.toArray(new CharSequence[items.size()]), selected, this);
-        builder.setPositiveButton(android.R.string.ok,
-                new DialogInterface.OnClickListener() {
+		ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), R.layout.textview_for_spinner, new String[]{spinnerText});
+		setAdapter(adapter);
+		if (selected.length > 0) {
+			listener.onItemsSelected(selected);
+		}
 
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-        builder.setOnCancelListener(this);
-        builder.show();
-        return true;
-    }
+	}
 
-    /**
-     * Sets items to this spinner.
-     *
-     * @param items    A TreeMap where the keys are the values to display in the spinner
-     *                 and the value the initial selected state of the key.
-     * @param listener A MultiSpinnerListener.
-     */
-    public void setItems(LinkedHashMap<String, Boolean> items, MultiSpinnerListener listener) {
-        this.items = new ArrayList<>(items.keySet());
-        this.listener = listener;
+	@Override
+	public boolean performClick() {
+		super.performClick();
+		AlertDialog.Builder builder = new AlertDialog.Builder(getContext(), R.style.myDialog);
+		builder.setTitle(spinnerTitle);
+		builder.setMultiChoiceItems(
+				items.toArray(new CharSequence[items.size()]), selected, this);
+		builder.setPositiveButton(android.R.string.ok,
+				new DialogInterface.OnClickListener() {
 
-        List<Boolean> values = new ArrayList<>(items.values());
-        selected = new boolean[values.size()];
-        for (int i = 0; i < items.size(); i++) {
-            selected[i] = values.get(i);
-        }
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						dialog.cancel();
+					}
+				});
+		builder.setOnCancelListener(this);
+		builder.show();
+		return true;
+	}
 
-        // all text on the spinner
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), R.layout.textview_for_spinner, new String[]{defaultText});
-        setAdapter(adapter);
+	/**
+	 * Sets items to this spinner.
+	 *
+	 * @param items    A TreeMap where the keys are the values to display in the spinner
+	 *                 and the value the initial selected state of the key.
+	 * @param listener A MultiSpinnerListener.
+	 */
+	public void setItems(LinkedHashMap<String, Boolean> items, MultiSpinnerListener listener) {
+		this.items = new ArrayList<>(items.keySet());
+		this.listener = listener;
 
-        // Set Spinner Text
-        onCancel(null);
-    }
+		List<Boolean> values = new ArrayList<>(items.values());
+		selected = new boolean[values.size()];
+		for (int i = 0; i < items.size(); i++) {
+			selected[i] = values.get(i);
+		}
+
+		// all text on the spinner
+		ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), R.layout.textview_for_spinner, new String[]{defaultText});
+		setAdapter(adapter);
+
+		// Set Spinner Text
+		onCancel(null);
+	}
 
 }

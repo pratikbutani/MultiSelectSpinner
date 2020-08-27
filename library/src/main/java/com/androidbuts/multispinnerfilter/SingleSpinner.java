@@ -121,17 +121,17 @@ public class SingleSpinner extends androidx.appcompat.widget.AppCompatSpinner im
         View view = inflater.inflate(R.layout.alert_dialog_listview_search, null);
         builder.setView(view);
 
-        final ListView listView = (ListView) view.findViewById(R.id.alertSearchListView);
+        final ListView listView = view.findViewById(R.id.alertSearchListView);
         listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         listView.setFastScrollEnabled(false);
         adapter = new MyAdapter(getContext(), items);
 
         listView.setAdapter(adapter);
-        final TextView emptyText = (TextView) view.findViewById(R.id.empty);
+        final TextView emptyText = view.findViewById(R.id.empty);
         emptyText.setText(emptyTitle);
         listView.setEmptyView(emptyText);
 
-        EditText editText = (EditText) view.findViewById(R.id.alertSearchEditText);
+        EditText editText = view.findViewById(R.id.alertSearchEditText);
         editText.setHint(searchHint);
         editText.setVisibility(GONE);
 
@@ -211,7 +211,7 @@ public class SingleSpinner extends androidx.appcompat.widget.AppCompatSpinner im
             //Log.i(TAG, "getView() enter");
             ViewHolder holder = new ViewHolder();
             convertView = inflater.inflate(R.layout.item_listview_single, parent, false);
-            holder.textView = (TextView) convertView.findViewById(R.id.alertTextView);
+            holder.textView = convertView.findViewById(R.id.alertTextView);
             convertView.setTag(holder);
 
             if (colorseparation)

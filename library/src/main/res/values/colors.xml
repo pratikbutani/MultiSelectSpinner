@@ -24,8 +24,8 @@
     <color name="android_text_color">#747474</color>
     <color name="app_topbar_color">#AAAAAA</color>
 
-    <color name="list_even">#AAAAAA</color>
-    <color name="list_odd">#E1E2E2</color>
+    <color name="list_even">#FFEFEF</color>
+    <color name="list_odd">#E9FFFF</color>
     <color name="list_selected">#455FB6</color>
     <color name="list_header">#99979C</color>
 

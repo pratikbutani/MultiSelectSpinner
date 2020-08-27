@@ -1,51 +1,52 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginBottom="10dp"
-    android:orientation="vertical">
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:layout_marginBottom="10dp"
+	android:orientation="vertical">
 
-    <com.androidbuts.multispinnerfilter.MultiSpinner
-        android:id="@+id/simpleMultiSpinner"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:visibility="gone"
-        app:hintText="Multi Selection" />
+	<com.androidbuts.multispinnerfilter.MultiSpinner
+		android:id="@+id/simpleMultiSpinner"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="20dp"
+		android:visibility="gone"
+		app:hintText="Multi Selection" />
 
-    <com.androidbuts.multispinnerfilter.MultiSpinnerSearch
-        android:id="@+id/searchMultiSpinnerUnlimited"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        app:hintText="Multi Selection With Filter Without Limit" />
+	<com.androidbuts.multispinnerfilter.MultiSpinnerSearch
+		android:id="@+id/searchMultiSpinnerUnlimited"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="10dp"
+		app:hintText="Multi Selection With Filter Without Limit" />
 
-    <com.androidbuts.multispinnerfilter.MultiSpinnerSearch
-        android:id="@+id/searchMultiSpinnerLimit"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        app:highlightSelected="false"
-        app:highlightColor="@color/red"
-        app:hintText="Multi Selection With Filter And Limit" />
-    <TextView
-        android:fontFamily="sans-serif"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+	<com.androidbuts.multispinnerfilter.MultiSpinnerSearch
+		android:id="@+id/searchMultiSpinnerLimit"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="10dp"
+		app:highlightColor="@color/red"
+		app:highlightSelected="false"
+		app:hintText="Multi Selection With Filter And Limit" />
 
-    <com.androidbuts.multispinnerfilter.SingleSpinnerSearch
-        android:id="@+id/searchSingleSpinner"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        app:hintText="Single Selection With Filter" />
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:fontFamily="sans-serif" />
 
-    <com.androidbuts.multispinnerfilter.SingleSpinner
-        android:id="@+id/singleSpinner"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        app:hintText="Single Selection" />
+	<com.androidbuts.multispinnerfilter.SingleSpinnerSearch
+		android:id="@+id/searchSingleSpinner"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="10dp"
+		app:hintText="Single Selection With Filter" />
+
+	<com.androidbuts.multispinnerfilter.SingleSpinner
+		android:id="@+id/singleSpinner"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="10dp"
+		app:hintText="Single Selection" />
 
 
 </LinearLayout>
