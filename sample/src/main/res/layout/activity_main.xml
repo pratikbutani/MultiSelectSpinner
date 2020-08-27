@@ -25,7 +25,13 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        app:highlightSelected="false"
+        app:highlightColor="@color/red"
         app:hintText="Multi Selection With Filter And Limit" />
+    <TextView
+        android:fontFamily="sans-serif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
     <com.androidbuts.multispinnerfilter.SingleSpinnerSearch
         android:id="@+id/searchSingleSpinner"
