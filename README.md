@@ -24,13 +24,6 @@
   * Extracted the sample into a separate module.
   * Code cleanup.
 
-
-### MultiSelect Spinner with Search/Filter:
-
-![](https://lh5.googleusercontent.com/-MivlH0DxhMc/VZJ91Aa6qtI/AAAAAAAALdc/ZYfHBo_e9Vk/w325-h577-no/Screenshot_2015-06-30-16-03-59.png)
-
-![](https://lh5.googleusercontent.com/-Slk9xZZvOw8/VZJ91NEC9UI/AAAAAAAALdk/dg9k5e_8z8Y/w325-h577-no/Screenshot_2015-06-30-16-03-31.png)      ![](https://lh5.googleusercontent.com/-oLU8ZzsxXBk/VZJ91RZcGiI/AAAAAAAALdo/r4LgvaTB5p8/w325-h577-no/Screenshot_2015-06-30-16-03-51.png)
-
 ### How to use SINGLE ITEM SELECTION:
 
 ##SINGLE ITEM SELECTION SPINNER (XML Code):
