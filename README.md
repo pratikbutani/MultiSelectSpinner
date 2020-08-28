@@ -28,6 +28,7 @@
   * `position` parameter is removed from both types of Spinner. Check comments above the code of `setItems`
   * `selectAll` button added to Select All Items in MultiSelectSpinner.
   * Code Optimised and Upgraded to latest versions of libraries/dependencies.
+  * **MOST IMP CHANGE** You will get all the selected items in the listener instead of all items.
  
 
 # How to use SINGLE ITEM SELECTION:
