@@ -15,20 +15,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54e8918a-cdf8-4307-8550-42c543579946" name="Default" comment="Dynamic Change text of Filter Hint &quot;Type Search&quot; and text of &quot;Not Found&quot;">
-      <change afterPath="$PROJECT_DIR$/library/src/main/java/com/androidbuts/multispinnerfilter/SingleSpinnerListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/library/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/androidbuts/multispinnerfilter/MultiSpinner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/androidbuts/multispinnerfilter/MultiSpinnerListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/androidbuts/multispinnerfilter/MultiSpinnerListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/androidbuts/multispinnerfilter/MultiSpinnerSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/androidbuts/multispinnerfilter/MultiSpinnerSearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/androidbuts/multispinnerfilter/SingleSpinner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/androidbuts/multispinnerfilter/SingleSpinnerSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/androidbuts/multispinnerfilter/SingleSpinnerSearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/androidbuts/multispinnerfilter/SpinnerListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/src/main/res/layout/activity_main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/sample/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/src/main/java/com/androidbuts/sample/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/java/com/androidbuts/sample/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,25 +202,25 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1598591849661" />
-    <state width="878" height="160" key="GridCell.Tab.0.bottom" timestamp="1598526408145">
+    <state width="1323" height="160" key="GridCell.Tab.0.bottom" timestamp="1598594914959">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="878" height="160" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1598526408145" />
+    <state width="1323" height="160" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1598594914959" />
     <state width="1877" height="338" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1592813382424" />
-    <state width="878" height="160" key="GridCell.Tab.0.center" timestamp="1598526408145">
+    <state width="1323" height="160" key="GridCell.Tab.0.center" timestamp="1598594914959">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="878" height="160" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1598526408145" />
+    <state width="1323" height="160" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1598594914959" />
     <state width="1877" height="338" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1592813382424" />
-    <state width="878" height="160" key="GridCell.Tab.0.left" timestamp="1598526408145">
+    <state width="1323" height="160" key="GridCell.Tab.0.left" timestamp="1598594914959">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="878" height="160" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1598526408145" />
+    <state width="1323" height="160" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1598594914959" />
     <state width="1877" height="338" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1592813382424" />
-    <state width="878" height="160" key="GridCell.Tab.0.right" timestamp="1598526408145">
+    <state width="1323" height="160" key="GridCell.Tab.0.right" timestamp="1598594914959">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="878" height="160" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1598526408145" />
+    <state width="1323" height="160" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1598594914959" />
     <state width="1877" height="338" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1592813382424" />
     <state width="1877" height="338" key="GridCell.Tab.1.bottom" timestamp="1592813382424">
       <screen x="0" y="0" width="1920" height="1040" />

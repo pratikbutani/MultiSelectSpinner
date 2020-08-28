@@ -31,84 +31,111 @@
 
 ![](https://lh5.googleusercontent.com/-Slk9xZZvOw8/VZJ91NEC9UI/AAAAAAAALdk/dg9k5e_8z8Y/w325-h577-no/Screenshot_2015-06-30-16-03-31.png)      ![](https://lh5.googleusercontent.com/-oLU8ZzsxXBk/VZJ91RZcGiI/AAAAAAAALdo/r4LgvaTB5p8/w325-h577-no/Screenshot_2015-06-30-16-03-51.png)
 
-### How to use (WITHOUT FILTER):
+### How to use SINGLE ITEM SELECTION:
 
-	/*  
-	* Getting array of String to Bind in Spinner
-	*/
-	final List<String> list = Arrays.asList(getResources().getStringArray(R.array.sports_array));
-		
-	/**
-	* Simple MultiSelection Spinner (Without Search/Filter Functionlity)
-	* 
-	*  Using MultiSpinner class
-	*/	
-	MultiSpinner simpleSpinner = (MultiSpinner) findViewById(R.id.simpleMultiSpinner);
-	
-	simpleSpinner.setItems(list, "Multi Selection Without Filter", -1, new MultiSpinnerListener() {
-		
-	    @Override
-	public void onItemsSelected(boolean[] selected) {
-			
-			// your operation with code...
-			for(int i=0; i<selected.length; i++) {
-				if(selected[i]) {
-					Log.i("TAG", i + " : "+ list.get(i));
+##SINGLE ITEM SELECTION SPINNER (XML Code):
+
+    <com.androidbuts.multispinnerfilter.SingleSpinnerSearch
+            android:id="@+id/singleItemSelectionSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:hintText="Single Selection Spinner" />
+
+##SINGLE ITEM SELECTION SPINNER (Java Code):
+
+        /******** MUST READ ALL COMMENTS AS DOCUMENTATION *********/
+        /**
+		 * Single Item Selection Spinner Demo
+		 */
+		SingleSpinnerSearch singleSpinnerSearch = findViewById(R.id.singleItemSelectionSpinner);
+
+		// Pass true, If you want color separation. Otherwise false. default = false.
+		singleSpinnerSearch.setColorseparation(true);
+
+		// Pass true If you want searchView above the list. Otherwise false. default = true.
+		singleSpinnerSearch.setSearchEnabled(true);
+
+		// A text that will display in search hint.
+		singleSpinnerSearch.setSearchHint("Select your mood");
+
+		// Removed second parameter, position. Its not required now..
+		// If you want to pass preselected items, you can do it while making listArray,
+		// pass true in setSelected of any item that you want to preselect
+		// LOGICALLY, PASS Only One Item As SELECTED...
+		singleSpinnerSearch.setItems(listArray0, new SingleSpinnerListener() {
+			@Override
+			public void onItemsSelected(KeyPairBoolData selectedItem) {
+				Log.i(TAG, "Selected Item : " + selectedItem.getName());
+			}
+
+			@Override
+			public void onClear() {
+				Toast.makeText(MainActivity.this, "Cleared Selected Item", Toast.LENGTH_SHORT).show();
+			}
+		});
+
+### How to use MULTIPLE ITEM SELECTION SPINNER:
+
+## MULTIPLE ITEM SELECTION SPINNER (XML Code):
+
+	<com.androidbuts.multispinnerfilter.MultiSpinnerSearch
+		android:id="@+id/multipleItemSelectionSpinner"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="10dp"
+		app:hintText="Multi Item Selection" />
+
+## MULTIPLE ITEM SELECTION SPINNER (Java Code):
+
+        /**
+		 * Search MultiSelection Spinner (With Search/Filter Functionality)
+		 *
+		 *  Using MultiSpinnerSearch class
+		 */
+		MultiSpinnerSearch multiSelectSpinnerWithSearch = findViewById(R.id.multipleItemSelectionSpinner);
+
+		// Pass true If you want searchView above the list. Otherwise false. default = true.
+		multiSelectSpinnerWithSearch.setSearchEnabled(true);
+
+		// A text that will display in search hint.
+		multiSelectSpinnerWithSearch.setSearchHint("Select your mood");
+
+		// Set text that will display when search result not found...
+		multiSelectSpinnerWithSearch.setEmptyTitle("Not Data Found!");
+
+		// If you will set the limit, this button will not display automatically.
+		multiSelectSpinnerWithSearch.setShowSelectAllButton(true);
+
+		// Removed second parameter, position. Its not required now..
+		// If you want to pass preselected items, you can do it while making listArray,
+		// pass true in setSelected of any item that you want to preselect
+		multiSelectSpinnerWithSearch.setItems(listArray1, new MultiSpinnerListener() {
+			@Override
+			public void onItemsSelected(List<KeyPairBoolData> items) {
+				for (int i = 0; i < items.size(); i++) {
+					if (items.get(i).isSelected()) {
+						Log.i(TAG, i + " : " + items.get(i).getName() + " : " + items.get(i).isSelected());
+					}
 				}
 			}
-		}
-	});
+		});
 
-### How to use (WITH FILTER):
-
-	/**
-	 * Search MultiSelection Spinner (With Search/Filter Functionality)
-	 * 
-	 *  Using MultiSpinnerSearch class
-	 */
-	MultiSpinnerSearch searchSpinner = (MultiSpinnerSearch) findViewById(R.id.searchMultiSpinner);
-	final List<KeyPairBoolData> listArray = new ArrayList<KeyPairBoolData>();
-
-	for(int i=0; i<list.size(); i++) {
-		KeyPairBoolData h = new KeyPairBoolData();
-		h.setId(i+1);
-		h.setName(list.get(i));
-		h.setSelected(false);
-		listArray.add(h);
-	}
-
-	/***
-	 * -1 is no by default selection
-	 * 0 to length will select corresponding values 
-	 */
-	searchSpinner.setItems(listArray, "Multi Selection With Filter", -1, new MultiSpinnerSearchListener() {
-		@Override
-		public void onItemsSelected(List<KeyPairBoolData> items) {
-
-			for(int i=0; i<items.size(); i++) {
-				if(items.get(i).isSelected()) {
-					Log.i("TAG", i + " : " + items.get(i).getName() + " : " + items.get(i).isSelected());
-				}
+		/**
+		 * If you want to set limit as maximum item should be selected is 2.
+		 * For No limit -1 or do not call this method.
+		 *
+		 */
+		multiSelectSpinnerWithSearch.setLimit(2, new MultiSpinnerSearch.LimitExceedListener() {
+			@Override
+			public void onLimitListener(KeyPairBoolData data) {
+				Toast.makeText(getApplicationContext(),
+						"Limit exceed ", Toast.LENGTH_LONG).show();
 			}
-		}
-	});
+		});
 
-
-### (Optional) Limit setting 
-
-	/**
-	 *  Using MultiSpinnerSearch object
-	 *  call setLimit method
-	 *  
-	 */
-	searchSpinner.setLimit(3, new MultiSpinnerSearch.LimitExceedListener() {
-            @Override
-            public void onLimitListener(KeyPairBoolData data) {
-                Toast.makeText(getApplicationContext(),
-                        "Limit exceed ", Toast.LENGTH_LONG).show();
-            }
-        });
-	
-	
-### (Optional) Add Color Separation to the list
-	searchSpinner.setColorseparation(true);
+### MAJOR CHANGES:
+ * `position` parameter is removed from both types of Spinner. Check comments above the code of `setItems`
+ * `selectAll` button added to Select All Items in MultiSelectSpinner.
+ * Code Optimised and Upgraded to latest versions of libraries/dependencies.
+ 
