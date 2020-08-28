@@ -3,50 +3,34 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:layout_marginBottom="10dp"
-	android:orientation="vertical">
-
-	<com.androidbuts.multispinnerfilter.MultiSpinner
-		android:id="@+id/simpleMultiSpinner"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:layout_margin="20dp"
-		android:visibility="gone"
-		app:hintText="Multi Selection" />
-
-	<com.androidbuts.multispinnerfilter.MultiSpinnerSearch
-		android:id="@+id/searchMultiSpinnerUnlimited"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:layout_margin="10dp"
-		app:hintText="Multi Selection With Filter Without Limit" />
-
-	<com.androidbuts.multispinnerfilter.MultiSpinnerSearch
-		android:id="@+id/searchMultiSpinnerLimit"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:layout_margin="10dp"
-		app:highlightColor="@color/red"
-		app:highlightSelected="false"
-		app:hintText="Multi Selection With Filter And Limit" />
+	android:orientation="vertical"
+	android:padding="20dp">
 
 	<TextView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:fontFamily="sans-serif" />
+		android:fontFamily="sans-serif"
+		android:text="Single Item Selection Spinner" />
 
 	<com.androidbuts.multispinnerfilter.SingleSpinnerSearch
-		android:id="@+id/searchSingleSpinner"
-		android:layout_width="fill_parent"
+		android:id="@+id/singleItemSelectionSpinner"
+		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:layout_margin="10dp"
-		app:hintText="Single Selection With Filter" />
+		app:hintText="Single Selection Spinner" />
 
-	<com.androidbuts.multispinnerfilter.SingleSpinner
-		android:id="@+id/singleSpinner"
-		android:layout_width="fill_parent"
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:fontFamily="sans-serif"
+		android:text="Multi Item Selection Spinner" />
+
+	<com.androidbuts.multispinnerfilter.MultiSpinnerSearch
+		android:id="@+id/multipleItemSelectionSpinner"
+		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:layout_margin="10dp"
-		app:hintText="Single Selection" />
-
+		app:hintText="Multi Item Selection" />
 
 </LinearLayout>

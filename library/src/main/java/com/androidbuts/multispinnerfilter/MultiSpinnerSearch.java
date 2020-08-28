@@ -48,11 +48,12 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
 
 	private boolean isShowSelectAllButton = false;
 
-	private SpinnerListener listener;
+	private MultiSpinnerListener listener;
 	private LimitExceedListener limitListener;
 
 	private MyAdapter adapter;
 	private List<KeyPairBoolData> items;
+	private boolean isSearchEnabled = true;
 
 	public MultiSpinnerSearch(Context context) {
 		super(context);
@@ -82,6 +83,14 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
 
 	public MultiSpinnerSearch(Context arg0, AttributeSet arg1, int arg2) {
 		super(arg0, arg1, arg2);
+	}
+
+	public boolean isSearchEnabled() {
+		return isSearchEnabled;
+	}
+
+	public void setSearchEnabled(boolean searchEnabled) {
+		isSearchEnabled = searchEnabled;
 	}
 
 	public boolean isColorSeparation() {
@@ -132,9 +141,12 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
 
 		StringBuilder spinnerBuffer = new StringBuilder();
 
+		ArrayList<KeyPairBoolData> selectedData = new ArrayList<>();
 		for (int i = 0; i < items.size(); i++) {
-			if (items.get(i).isSelected()) {
-				spinnerBuffer.append(items.get(i).getName());
+			KeyPairBoolData currentData = items.get(i);
+			if (currentData.isSelected()) {
+				selectedData.add(currentData);
+				spinnerBuffer.append(currentData.getName());
 				spinnerBuffer.append(", ");
 			}
 		}
@@ -151,7 +163,7 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
 		if (adapter != null)
 			adapter.notifyDataSetChanged();
 
-		listener.onItemsSelected(items);
+		listener.onItemsSelected(selectedData);
 	}
 
 	@Override
@@ -178,22 +190,28 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
 		listView.setEmptyView(emptyText);
 
 		final EditText editText = view.findViewById(R.id.alertSearchEditText);
-		editText.setHint(searchHint);
-		editText.addTextChangedListener(new TextWatcher() {
+		if (isSearchEnabled) {
+			editText.setVisibility(VISIBLE);
+			editText.setHint(searchHint);
+			editText.addTextChangedListener(new TextWatcher() {
 
-			@Override
-			public void onTextChanged(CharSequence s, int start, int before, int count) {
-				adapter.getFilter().filter(s.toString());
-			}
+				@Override
+				public void onTextChanged(CharSequence s, int start, int before, int count) {
+					adapter.getFilter().filter(s.toString());
+				}
 
-			@Override
-			public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-			}
+				@Override
+				public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+				}
 
-			@Override
-			public void afterTextChanged(Editable s) {
-			}
-		});
+				@Override
+				public void afterTextChanged(Editable s) {
+				}
+			});
+		} else {
+			editText.setVisibility(GONE);
+		}
+
         /*
         Added Select all Dialog Button.
          */
@@ -201,15 +219,10 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
 			builder.setNeutralButton(android.R.string.selectAll, new DialogInterface.OnClickListener() {
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
-//                adapter.arrayList = adapter.mOriginalValues;
-					StringBuilder spinnerBuffer = new StringBuilder();
 					for (int i = 0; i < adapter.arrayList.size(); i++) {
 						adapter.arrayList.get(i).setSelected(true);
-						//Log.i(TAG, adapter.mOriginalValues.get(i).getName());
 					}
-
 					adapter.notifyDataSetChanged();
-
 					// To call onCancel listner and set title of selected items.
 					dialog.cancel();
 				}
@@ -217,7 +230,6 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
 		}
 
 		builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				//Log.i(TAG, " ITEMS : " + items.size());
@@ -232,7 +244,7 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
 		return true;
 	}
 
-	public void setItems(List<KeyPairBoolData> items, int position, SpinnerListener listener) {
+	public void setItems(List<KeyPairBoolData> items, MultiSpinnerListener listener) {
 
 		this.items = items;
 		this.listener = listener;
@@ -250,12 +262,6 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
 
 		ArrayAdapter<String> adapterSpinner = new ArrayAdapter<>(getContext(), R.layout.textview_for_spinner, new String[]{defaultText});
 		setAdapter(adapterSpinner);
-
-		if (position != -1) {
-			items.get(position).setSelected(true);
-			//listener.onItemsSelected(items);
-			onCancel(null);
-		}
 	}
 
 	public void setEmptyTitle(String emptyTitle) {

@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
     defaultConfig {
         applicationId "com.androidbuts.sample"
         minSdkVersion 19
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
     }
@@ -17,11 +17,17 @@ android {
     }
     productFlavors {
     }
+	compileOptions {
+		sourceCompatibility JavaVersion.VERSION_1_8
+		targetCompatibility JavaVersion.VERSION_1_8
+	}
+	buildToolsVersion '30.0.1'
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':library')
     testImplementation 'junit:junit:4.13'
+//	implementation 'com.github.pratikbutani:MultiSelectSpinner:-SNAPSHOT'
     implementation 'androidx.appcompat:appcompat:1.2.0'
 }

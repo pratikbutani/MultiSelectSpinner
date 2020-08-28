@@ -6,51 +6,131 @@
     <string name="hello_world">Hello world!</string>
     <string name="type_to_search">Type to Search</string>
 
-    <string-array name="sports_array">
-        <item>Shuttle Badminton</item>
-        <item>Tennis</item>
-        <item>Table Tennis</item>
-        <item>Basket Ball</item>
-        <item>Foot Ball</item>
-        <item>Volley Ball</item>
-        <item>Hockey</item>
-        <item>Swimming</item>
+    <string-array name="mood_array">
+        <item>Accepted</item>
+        <item>Accomplished</item>
+        <item>Aggravated</item>
+        <item>Alone</item>
+        <item>Amused</item>
+        <item>Angry</item>
+        <item>Annoyed</item>
+        <item>Anxious</item>
+        <item>Apathetic</item>
+        <item>Ashamed</item>
+        <item>Awake</item>
+        <item>Bewildered</item>
+        <item>Bitchy</item>
+        <item>Bittersweet</item>
+        <item>Blah</item>
+        <item>Blank</item>
+        <item>Blissful</item>
+        <item>Bored</item>
+        <item>Bouncy</item>
+        <item>Calm</item>
+        <item>Cheerful</item>
+        <item>Chipper</item>
+        <item>Cold</item>
+        <item>Complacent</item>
+        <item>Confused</item>
+        <item>Content</item>
+        <item>Cranky</item>
+        <item>Crappy</item>
+        <item>Crazy</item>
+        <item>Crushed</item>
+        <item>Curious</item>
+        <item>Cynical</item>
+        <item>Dark</item>
+        <item>Depressed</item>
+        <item>Determined</item>
+        <item>Devious</item>
+        <item>Dirty</item>
+        <item>Disappointed</item>
+        <item>Discontent</item>
+        <item>Ditzy</item>
+        <item>Dorky</item>
+        <item>Drained</item>
+        <item>Drunk</item>
+        <item>Ecstatic</item>
+        <item>Energetic</item>
+        <item>Enraged</item>
+        <item>Enthralled</item>
+        <item>Envious</item>
+        <item>Exanimate</item>
+        <item>Excited</item>
+        <item>Exhausted</item>
+        <item>Flirty</item>
+        <item>Frustrated</item>
+        <item>Full</item>
+        <item>Geeky</item>
+        <item>Giddy</item>
+        <item>Giggly</item>
+        <item>Gloomy</item>
+        <item>Good</item>
+        <item>Grateful</item>
+        <item>Groggy</item>
+        <item>Grumpy</item>
+        <item>Guilty</item>
+        <item>Happy</item>
+        <item>High</item>
+        <item>Hopeful</item>
+        <item>Hot</item>
+        <item>Hungry</item>
+        <item>Hyper</item>
+        <item>Impressed</item>
+        <item>Indescribable</item>
+        <item>Indifferent</item>
+        <item>Infuriated</item>
+        <item>Irate</item>
+        <item>Irritated</item>
+        <item>Jealous</item>
+        <item>Jubilant</item>
+        <item>Lazy</item>
+        <item>Lethargic</item>
+        <item>Listless</item>
+        <item>Lonely</item>
+        <item>Loved</item>
+        <item>Mad</item>
+        <item>Melancholy</item>
+        <item>Mellow</item>
+        <item>Mischievous</item>
+        <item>Moody</item>
+        <item>Morose</item>
+        <item>Naughty</item>
+        <item>Nerdy</item>
+        <item>NotSpecified</item>
+        <item>Numb</item>
+        <item>Okay</item>
+        <item>Optimistic</item>
+        <item>Peaceful</item>
+        <item>Pessimistic</item>
+        <item>Pissedoff</item>
+        <item>Pleased</item>
+        <item>Predatory</item>
+        <item>Quixotic</item>
+        <item>Recumbent</item>
+        <item>Refreshed</item>
+        <item>Rejected</item>
+        <item>Rejuvenated</item>
+        <item>Relaxed</item>
+        <item>Relieved</item>
+        <item>Restless</item>
+        <item>Rushed</item>
+        <item>Sad</item>
+        <item>Satisfied</item>
+        <item>Shocked</item>
+        <item>Sick</item>
+        <item>Silly</item>
+        <item>Sleepy</item>
+        <item>Smart</item>
+        <item>Stressed</item>
+        <item>Surprised</item>
+        <item>Sympathetic</item>
+        <item>Thankful</item>
+        <item>Tired</item>
+        <item>Touched</item>
+        <item>Uncomfortable</item>
+        <item>Weird</item>
 
-        <item>Shuttle Badminton 2</item>
-        <item>Tennis 2</item>
-        <item>Table Tennis 2</item>
-        <item>Basket Ball 2</item>
-        <item>Foot Ball 2</item>
-        <item>Volley Ball 2</item>
-        <item>Hockey 2</item>
-        <item>Swimming 2</item>
-
-        <item>Shuttle Badminton 3</item>
-        <item>Tennis 3</item>
-        <item>Table Tennis 3</item>
-        <item>Basket Ball 3</item>
-        <item>Foot Ball 3</item>
-        <item>Volley Ball 3</item>
-        <item>Hockey 3</item>
-        <item>Swimming 3</item>
-
-        <item>Shuttle Badminton 4</item>
-        <item>Tennis 4</item>
-        <item>Table Tennis 4</item>
-        <item>Basket Ball 4</item>
-        <item>Foot Ball 4</item>
-        <item>Volley Ball 4</item>
-        <item>Hockey 4</item>
-        <item>Swimming 4</item>
-
-        <item>Shuttle Badminton 5</item>
-        <item>Tennis 5</item>
-        <item>Table Tennis 5</item>
-        <item>Basket Ball 5</item>
-        <item>Foot Ball 5</item>
-        <item>Volley Ball 5</item>
-        <item>Hockey 5</item>
-        <item>Swimming 5</item>
     </string-array>
 
 
