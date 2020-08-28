@@ -1,9 +1,12 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c6b59b9ed05b45d5b2e4b2747d3cfc9a)](https://app.codacy.com/app/pratikbutani/MultiSelectSpinner?utm_source=github.com&utm_medium=referral&utm_content=pratikbutani/MultiSelectSpinner&utm_campaign=Badge_Grade_Dashboard)
 [![](https://jitpack.io/v/pratikbutani/MultiSelectSpinner.svg)](https://jitpack.io/#pratikbutani/MultiSelectSpinner)
 
+# MultiSelectSpinner
+### Android Library to Select multiple items from Spinner
+
 <a href="https://imgur.com/O9n105R"><img src="https://i.imgur.com/O9n105R.gif" title="source: imgur.com" /></a>
 
-### How to import:
+# How to import:
 ## Add it in your root build.gradle at the end of repositories:
 
 	allprojects {
@@ -13,20 +16,23 @@
 		}
 	}
 
-### Add dependency in build.gradle:
+## Add dependency in build.gradle:
 
     implementation 'com.github.pratikbutani:MultiSelectSpinner:-SNAPSHOT'
 
-### Changes
+## Recent Changes
 
-  * Made this an Android Studio project.
   * Added Material library.
   * Extracted the sample into a separate module.
   * Code cleanup.
+  * `position` parameter is removed from both types of Spinner. Check comments above the code of `setItems`
+  * `selectAll` button added to Select All Items in MultiSelectSpinner.
+  * Code Optimised and Upgraded to latest versions of libraries/dependencies.
+ 
 
-### How to use SINGLE ITEM SELECTION:
+# How to use SINGLE ITEM SELECTION:
 
-##SINGLE ITEM SELECTION SPINNER (XML Code):
+## SINGLE ITEM SELECTION SPINNER (XML Code):
 
     <com.androidbuts.multispinnerfilter.SingleSpinnerSearch
             android:id="@+id/singleItemSelectionSpinner"
@@ -35,7 +41,7 @@
             android:layout_margin="10dp"
             app:hintText="Single Selection Spinner" />
 
-##SINGLE ITEM SELECTION SPINNER (Java Code):
+## SINGLE ITEM SELECTION SPINNER (Java Code):
 
         /******** MUST READ ALL COMMENTS AS DOCUMENTATION *********/
         /**
@@ -68,7 +74,8 @@
 			}
 		});
 
-### How to use MULTIPLE ITEM SELECTION SPINNER:
+
+# How to use MULTIPLE ITEM SELECTION SPINNER:
 
 ## MULTIPLE ITEM SELECTION SPINNER (XML Code):
 
@@ -127,8 +134,4 @@
 			}
 		});
 
-### MAJOR CHANGES:
- * `position` parameter is removed from both types of Spinner. Check comments above the code of `setItems`
- * `selectAll` button added to Select All Items in MultiSelectSpinner.
- * Code Optimised and Upgraded to latest versions of libraries/dependencies.
- 
+
