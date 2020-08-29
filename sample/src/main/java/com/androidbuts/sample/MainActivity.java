@@ -7,10 +7,10 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.androidbuts.multispinnerfilter.KeyPairBoolData;
+import com.androidbuts.multispinnerfilter.MultiSpinnerListener;
 import com.androidbuts.multispinnerfilter.MultiSpinnerSearch;
 import com.androidbuts.multispinnerfilter.SingleSpinnerListener;
 import com.androidbuts.multispinnerfilter.SingleSpinnerSearch;
-import com.androidbuts.multispinnerfilter.MultiSpinnerListener;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -49,8 +49,8 @@ public class MainActivity extends AppCompatActivity {
 			KeyPairBoolData h = new KeyPairBoolData();
 			h.setId(i + 1);
 			h.setName(list.get(i));
-			h.setSelected(false);
-			listArray0.add(h);
+			h.setSelected(true);
+			listArray1.add(h);
 		}
 
 		/**
@@ -109,10 +109,9 @@ public class MainActivity extends AppCompatActivity {
 		multiSelectSpinnerWithSearch.setItems(listArray1, new MultiSpinnerListener() {
 			@Override
 			public void onItemsSelected(List<KeyPairBoolData> items) {
+				//The followings are selected items.
 				for (int i = 0; i < items.size(); i++) {
-					if (items.get(i).isSelected()) {
-						Log.i(TAG, i + " : " + items.get(i).getName() + " : " + items.get(i).isSelected());
-					}
+					Log.i(TAG, i + " : " + items.get(i).getName() + " : " + items.get(i).isSelected());
 				}
 			}
 		});
@@ -122,12 +121,13 @@ public class MainActivity extends AppCompatActivity {
 		 * For No limit -1 or do not call this method.
 		 *
 		 */
-		multiSelectSpinnerWithSearch.setLimit(2, new MultiSpinnerSearch.LimitExceedListener() {
-			@Override
-			public void onLimitListener(KeyPairBoolData data) {
-				Toast.makeText(getApplicationContext(),
-						"Limit exceed ", Toast.LENGTH_LONG).show();
-			}
-		});
+		/**** UNCOMMENT FOLLOWING CODE IF YOU WANT TO SET LIMIT ****/
+//		multiSelectSpinnerWithSearch.setLimit(2, new MultiSpinnerSearch.LimitExceedListener() {
+//			@Override
+//			public void onLimitListener(KeyPairBoolData data) {
+//				Toast.makeText(getApplicationContext(),
+//						"Limit exceed ", Toast.LENGTH_LONG).show();
+//			}
+//		});
 	}
 }
