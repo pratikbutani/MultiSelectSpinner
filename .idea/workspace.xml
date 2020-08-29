@@ -17,14 +17,13 @@
     <list default="true" id="54e8918a-cdf8-4307-8550-42c543579946" name="Default" comment="Dynamic Change text of Filter Hint &quot;Type Search&quot; and text of &quot;Not Found&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sample/src/main/java/com/androidbuts/sample/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/java/com/androidbuts/sample/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/res/layout/activity_main.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="16579747" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="New_Device_1_API_28" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -243,9 +242,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="656" y="252" width="607" height="536" key="find.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1592813569094" />
-    <state x="339" y="16" width="672" height="676" key="search.everywhere.popup" timestamp="1598678392070">
+    <state x="339" y="16" width="672" height="676" key="search.everywhere.popup" timestamp="1598707617879">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="16" width="672" height="676" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1598678392070" />
+    <state x="339" y="16" width="672" height="676" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1598707617879" />
   </component>
 </project>

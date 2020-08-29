@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 			KeyPairBoolData h = new KeyPairBoolData();
 			h.setId(i + 1);
 			h.setName(list.get(i));
-			h.setSelected(true);
+			h.setSelected(false);
 			listArray1.add(h);
 		}
 
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 		singleSpinnerSearch.setColorseparation(true);
 
 		// Pass true If you want searchView above the list. Otherwise false. default = true.
-		singleSpinnerSearch.setSearchEnabled(true);
+		singleSpinnerSearch.setSearchEnabled(false);
 
 		// A text that will display in search hint.
 		singleSpinnerSearch.setSearchHint("Select your mood");
@@ -93,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
 
 		// Pass true If you want searchView above the list. Otherwise false. default = true.
 		multiSelectSpinnerWithSearch.setSearchEnabled(true);
+		multiSelectSpinnerWithSearch.setHintText("Select Any");
 
 		// A text that will display in search hint.
 		multiSelectSpinnerWithSearch.setSearchHint("Select your mood");

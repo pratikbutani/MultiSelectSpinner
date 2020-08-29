@@ -107,6 +107,7 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
 
 	public void setHintText(String hintText) {
 		this.spinnerTitle = hintText;
+		defaultText = spinnerTitle;
 	}
 
 	public void setLimit(int limit, LimitExceedListener listener) {
