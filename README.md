@@ -136,4 +136,7 @@
 		});
 
 
+## Buy a cup of coffee
+If you found this project helpful or you learned something from the source code and want to thank me, consider buying me a cup of ☕️ [PayPal](http://paypal.me/androidbuts)
+
 ### Do not forget to give star If its useful to you. :)
