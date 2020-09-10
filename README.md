@@ -2,12 +2,12 @@
 [![](https://jitpack.io/v/pratikbutani/MultiSelectSpinner.svg)](https://jitpack.io/#pratikbutani/MultiSelectSpinner)
 
 # MultiSelectSpinner
-### Android Library to Select multiple items from Spinner
+## Android Library to Select multiple items from Spinner
 
 <a href="https://imgur.com/O9n105R"><img src="https://i.imgur.com/O9n105R.gif" title="source: imgur.com" /></a>
 
-# How to import:
-## Add it in your root build.gradle at the end of repositories:
+# How to import
+## Add it in your root build.gradle at the end of repositories
 
 	allprojects {
 		repositories {
@@ -16,7 +16,7 @@
 		}
 	}
 
-## Add dependency in build.gradle:
+## Add dependency in build.gradle
 
     implementation 'com.github.pratikbutani:MultiSelectSpinner:-SNAPSHOT'
 
@@ -31,9 +31,9 @@
   * **MOST IMP CHANGE** You will get all the selected items in the listener instead of all items.
  
 
-# How to use SINGLE ITEM SELECTION:
+# How to use SINGLE ITEM SELECTION
 
-## SINGLE ITEM SELECTION SPINNER (XML Code):
+## SINGLE ITEM SELECTION SPINNER (XML Code)
 
     <com.androidbuts.multispinnerfilter.SingleSpinnerSearch
             android:id="@+id/singleItemSelectionSpinner"
@@ -42,7 +42,7 @@
             android:layout_margin="10dp"
             app:hintText="Single Selection Spinner" />
 
-## SINGLE ITEM SELECTION SPINNER (Java Code):
+## SINGLE ITEM SELECTION SPINNER (Java Code)
 
         /******** MUST READ ALL COMMENTS AS DOCUMENTATION *********/
         /**
@@ -76,9 +76,8 @@
 		});
 
 
-# How to use MULTIPLE ITEM SELECTION SPINNER:
-
-## MULTIPLE ITEM SELECTION SPINNER (XML Code):
+# How to use MULTIPLE ITEM SELECTION SPINNER
+## MULTIPLE ITEM SELECTION SPINNER (XML Code)
 
 	<com.androidbuts.multispinnerfilter.MultiSpinnerSearch
 		android:id="@+id/multipleItemSelectionSpinner"
@@ -87,7 +86,7 @@
 		android:layout_margin="10dp"
 		app:hintText="Multi Item Selection" />
 
-## MULTIPLE ITEM SELECTION SPINNER (Java Code):
+## MULTIPLE ITEM SELECTION SPINNER (Java Code)
 
         /**
 		 * Search MultiSelection Spinner (With Search/Filter Functionality)
