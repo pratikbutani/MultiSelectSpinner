@@ -23,7 +23,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="New_Device_1_API_28" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="16579747" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -75,6 +75,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -82,6 +83,9 @@
     <option name="MODULE_TAB" value="Default Config" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Projects\Others\MultiSelectSpinner\sample\src\main\res\drawable" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.androidbuts.multispinnerfilter" />
     </key>
@@ -207,6 +211,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1598591849661" />
+    <state x="393" y="201" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1599730489997">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="393" y="201" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1599730489997" />
     <state width="1323" height="160" key="GridCell.Tab.0.bottom" timestamp="1598594914959">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -243,13 +251,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="338" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1592813382424" />
+    <state x="196" y="112" key="caller.chooser.dialog" timestamp="1599731096198">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="196" y="112" key="caller.chooser.dialog/0.0.1366.728@0.0.1366.728" timestamp="1599731096198" />
+    <state x="378" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1599731914630">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="378" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1599731914630" />
+    <state x="290" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1599729688920">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="290" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.728@0.0.1366.728" timestamp="1599729688920" />
     <state x="656" y="252" width="607" height="536" key="find.popup" timestamp="1592813569094">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="656" y="252" width="607" height="536" key="find.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1592813569094" />
-    <state x="339" y="16" width="672" height="676" key="search.everywhere.popup" timestamp="1598593510775">
+    <state x="339" y="16" width="672" height="676" key="search.everywhere.popup" timestamp="1599731959749">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="16" width="672" height="676" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1598593510775" />
+    <state x="339" y="16" width="672" height="676" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1599731959749" />
   </component>
 </project>
