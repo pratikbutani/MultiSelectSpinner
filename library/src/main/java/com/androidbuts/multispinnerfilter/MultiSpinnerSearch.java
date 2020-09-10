@@ -237,6 +237,18 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
 			}
 		});
 
+		builder.setNegativeButton("Clear All", new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				//Log.i(TAG, " ITEMS : " + items.size());
+				for (int i = 0; i < adapter.arrayList.size(); i++) {
+					adapter.arrayList.get(i).setSelected(false);
+				}
+				adapter.notifyDataSetChanged();
+				dialog.cancel();
+			}
+		});
+
 		builder.setOnCancelListener(this);
 		ad = builder.show();
 		ad.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
