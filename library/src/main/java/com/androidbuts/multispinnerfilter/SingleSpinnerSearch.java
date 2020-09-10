@@ -178,26 +178,23 @@ public class SingleSpinnerSearch extends androidx.appcompat.widget.AppCompatSpin
 			editText.setVisibility(GONE);
 		}
 
-		builder.setPositiveButton("Clear", new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
+		builder.setPositiveButton("Clear", (dialog, which) -> {
 
-				for (int i = 0; i < items.size(); i++) {
-					items.get(i).setSelected(false);
-				}
-
-				ArrayAdapter<String> adapterSpinner = new ArrayAdapter<>(getContext(), R.layout.textview_for_spinner, new String[]{defaultText});
-				setAdapter(adapterSpinner);
-
-				if (adapter != null)
-					adapter.notifyDataSetChanged();
-
-				listener.onClear();
-				dialog.dismiss();
+			for (int i = 0; i < items.size(); i++) {
+				items.get(i).setSelected(false);
 			}
+
+			ArrayAdapter<String> adapterSpinner = new ArrayAdapter<>(getContext(), R.layout.textview_for_spinner, new String[]{defaultText});
+			setAdapter(adapterSpinner);
+
+			if (adapter != null)
+				adapter.notifyDataSetChanged();
+
+			listener.onClear();
+			dialog.dismiss();
 		});
 
-		builder.setOnCancelListener(this);
+		//builder.setOnCancelListener(this);
 		ad = builder.show();
 		return true;
 	}
@@ -231,7 +228,7 @@ public class SingleSpinnerSearch extends androidx.appcompat.widget.AppCompatSpin
 
 		List<KeyPairBoolData> arrayList;
 		List<KeyPairBoolData> mOriginalValues; // Original Values
-		LayoutInflater inflater;
+		final LayoutInflater inflater;
 
 		public MyAdapter(Context context, List<KeyPairBoolData> arrayList) {
 			this.arrayList = arrayList;
@@ -258,6 +255,8 @@ public class SingleSpinnerSearch extends androidx.appcompat.widget.AppCompatSpin
 			Log.i(TAG, "getView() enter");
 			ViewHolder holder;
 
+			final KeyPairBoolData data = arrayList.get(position);
+
 			if(convertView == null) {
 				holder = new ViewHolder();
 				convertView = inflater.inflate(R.layout.item_listview_single, parent, false);
@@ -267,38 +266,38 @@ public class SingleSpinnerSearch extends androidx.appcompat.widget.AppCompatSpin
 				holder = (ViewHolder) convertView.getTag();
 			}
 
-			if (colorseparation) {
-				if (position % 2 == 0) {
-					convertView.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.list_even));
-				} else {
-					convertView.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.list_odd));
-				}
-			}
-
-			final KeyPairBoolData data = arrayList.get(position);
 			holder.textView.setText(data.getName());
-			holder.textView.setTypeface(null, Typeface.NORMAL);
 
-			convertView.setOnClickListener(new OnClickListener() {
-				public void onClick(View v) {
-					int len = arrayList.size();
-					for (int i = 0; i < len; i++) {
-						arrayList.get(i).setSelected(false);
-						if (i == position) {
-							arrayList.get(i).setSelected(true);
-							Log.i(TAG, "On Click Selected Item : " + arrayList.get(i).getName() + " : " + arrayList.get(i).isSelected());
-						}
-					}
-					ad.dismiss();
-					SingleSpinnerSearch.this.onCancel(ad);
-				}
-			});
+			int color = R.color.white;
+			if (colorseparation) {
+				final int backgroundColor = (position % 2 == 0) ? R.color.list_even : R.color.list_odd;
+				color = backgroundColor;
+				convertView.setBackgroundColor(ContextCompat.getColor(getContext(), backgroundColor));
+			}
 
 			if (data.isSelected()) {
 				holder.textView.setTypeface(null, Typeface.BOLD);
 				holder.textView.setTextColor(Color.WHITE);
 				convertView.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.list_selected));
+			} else {
+				holder.textView.setTextColor(Color.DKGRAY);
+				holder.textView.setTypeface(null, Typeface.NORMAL);
+				convertView.setBackgroundColor(ContextCompat.getColor(getContext(), color));
 			}
+
+			convertView.setOnClickListener(v -> {
+				int len = arrayList.size();
+				for (int i = 0; i < len; i++) {
+					arrayList.get(i).setSelected(false);
+					if (i == position) {
+						arrayList.get(i).setSelected(true);
+						Log.i(TAG, "On Click Selected Item : " + arrayList.get(i).getName() + " : " + arrayList.get(i).isSelected());
+					}
+				}
+				ad.dismiss();
+				SingleSpinnerSearch.this.onCancel(ad);
+			});
+
 			return convertView;
 		}
 
@@ -324,7 +323,7 @@ public class SingleSpinnerSearch extends androidx.appcompat.widget.AppCompatSpin
 						mOriginalValues = new ArrayList<>(arrayList); // saves the original data in mOriginalValues
 					}
 
-					/********
+					/*
 					 *
 					 *  If constraint(CharSequence that is received) is null returns the mOriginalValues(Original) values
 					 *  else does the Filtering and returns FilteredArrList(Filtered)

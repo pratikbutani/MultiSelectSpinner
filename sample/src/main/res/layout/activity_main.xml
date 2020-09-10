@@ -6,30 +6,97 @@
 	android:orientation="vertical"
 	android:padding="20dp">
 
-	<TextView
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:fontFamily="sans-serif"
-		android:text="Single Item Selection Spinner" />
-
-	<com.androidbuts.multispinnerfilter.SingleSpinnerSearch
-		android:id="@+id/singleItemSelectionSpinner"
+	<LinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:layout_margin="10dp"
-		app:hintText="Single Selection Spinner" />
+		android:orientation="vertical"
+		android:padding="20dp">
 
-	<TextView
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:fontFamily="sans-serif"
-		android:text="Multi Item Selection Spinner" />
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:text="Single Item Selection Spinner" />
 
-	<com.androidbuts.multispinnerfilter.MultiSpinnerSearch
-		android:id="@+id/multipleItemSelectionSpinner"
+		<com.androidbuts.multispinnerfilter.SingleSpinnerSearch
+			android:id="@+id/singleItemSelectionSpinner"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="10dp"
+			app:hintText="Single Selection Spinner" />
+
+		<CheckBox
+			android:id="@+id/colorSeparationCheckBox"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="10dp"
+			android:text="Color Separation in Row" />
+
+		<CheckBox
+			android:id="@+id/searchEditTextCheckBox"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="10dp"
+			android:checked="true"
+			android:text="Search EditText" />
+
+	</LinearLayout>
+
+	<View
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:layout_margin="10dp"
-		app:hintText="Multi Item Selection" />
+		android:layout_height="1dp"
+		android:background="@color/gray" />
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1"
+		android:orientation="vertical"
+		android:padding="20dp">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:text="Multi Item Selection Spinner" />
+
+		<com.androidbuts.multispinnerfilter.MultiSpinnerSearch
+			android:id="@+id/multipleItemSelectionSpinner"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="10dp"
+			app:hintText="Multi Item Selection" />
+
+		<CheckBox
+			android:id="@+id/selectAllButtonMultipleCheckBox"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="10dp"
+			android:checked="true"
+			android:text="Select All Button" />
+
+		<CheckBox
+			android:id="@+id/colorSeparationMultipleCheckBox"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="10dp"
+			android:text="Color Separation in Row" />
+
+		<CheckBox
+			android:id="@+id/searchEditTextMultipleCheckBox"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="10dp"
+			android:checked="true"
+			android:text="Search EditText" />
+
+		<CheckBox
+			android:id="@+id/limitMultipleCheckBox"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="10dp"
+			android:text="Limited Selection (Limit given 5)" />
+
+	</LinearLayout>
 
 </LinearLayout>

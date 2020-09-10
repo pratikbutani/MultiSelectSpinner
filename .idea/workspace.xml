@@ -16,14 +16,37 @@
   <component name="ChangeListManager">
     <list default="true" id="54e8918a-cdf8-4307-8550-42c543579946" name="Default" comment="Dynamic Change text of Filter Hint &quot;Type Search&quot; and text of &quot;Not Found&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/library/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/androidbuts/multispinnerfilter/KeyPairBoolData.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/androidbuts/multispinnerfilter/KeyPairBoolData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/androidbuts/multispinnerfilter/MultiSpinnerSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/androidbuts/multispinnerfilter/MultiSpinnerSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/androidbuts/multispinnerfilter/SingleSpinnerListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/androidbuts/multispinnerfilter/SingleSpinnerListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/androidbuts/multispinnerfilter/SingleSpinnerSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/androidbuts/multispinnerfilter/SingleSpinnerSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/res/layout/alert_dialog_listview_search.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/res/layout/alert_dialog_listview_search.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/res/layout/textview_for_spinner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/res/layout/textview_for_spinner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/res/values-v21/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/res/values-v21/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/res/values/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/res/values/dimens.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample/src/androidTest/java/com/androidbuts/sample/ApplicationTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/sample/src/main/java/com/androidbuts/sample/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/java/com/androidbuts/sample/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample/src/main/res/drawable-hdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/res/drawable/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample/src/main/res/values-v11/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample/src/main/res/values-v14/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample/src/main/res/values-v21/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/res/values-v21/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample/src/main/res/values/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/res/values/dimens.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample/src/test/java/com/androidbuts/sample/ExampleUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/test/java/com/androidbuts/sample/ExampleUnitTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="New_Device_1_API_28" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="16579747" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -70,6 +93,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -77,6 +101,9 @@
     <option name="MODULE_TAB" value="Default Config" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Projects\Others\MultiSelectSpinner\sample\src\main\res\drawable" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.androidbuts.multispinnerfilter" />
     </key>
@@ -202,6 +229,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1598591849661" />
+    <state x="393" y="201" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1599730489997">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="393" y="201" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1599730489997" />
     <state width="1323" height="160" key="GridCell.Tab.0.bottom" timestamp="1598594914959">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -238,13 +269,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="338" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1592813382424" />
+    <state x="196" y="112" key="caller.chooser.dialog" timestamp="1599731096198">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="196" y="112" key="caller.chooser.dialog/0.0.1366.728@0.0.1366.728" timestamp="1599731096198" />
+    <state x="378" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1599731914630">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="378" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1599731914630" />
+    <state x="290" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1599729688920">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="290" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.728@0.0.1366.728" timestamp="1599729688920" />
     <state x="656" y="252" width="607" height="536" key="find.popup" timestamp="1592813569094">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="656" y="252" width="607" height="536" key="find.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1592813569094" />
-    <state x="339" y="16" width="672" height="676" key="search.everywhere.popup" timestamp="1598707617879">
+    <state x="339" y="16" width="672" height="676" key="search.everywhere.popup" timestamp="1599731959749">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="16" width="672" height="676" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1598707617879" />
+    <state x="339" y="16" width="672" height="676" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1599731959749" />
   </component>
 </project>
