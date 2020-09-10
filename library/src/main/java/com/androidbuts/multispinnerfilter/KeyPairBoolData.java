@@ -5,16 +5,6 @@ public class KeyPairBoolData {
     private String name;
     private boolean isSelected;
 
-    private Object object;
-
-    public Object getObject() {
-        return object;
-    }
-
-    public void setObject(Object object) {
-        this.object = object;
-    }
-
     /**
      * @return the id
      */

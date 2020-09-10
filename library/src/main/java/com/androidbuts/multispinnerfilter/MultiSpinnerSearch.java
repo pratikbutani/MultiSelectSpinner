@@ -28,9 +28,9 @@ import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelListener {
-	private static final String TAG = MultiSpinnerSearch.class.getSimpleName();
 
 	public static AlertDialog.Builder builder;
 	public static AlertDialog ad;
@@ -217,31 +217,24 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
         Added Select all Dialog Button.
          */
 		if (isShowSelectAllButton) {
-			builder.setNeutralButton(android.R.string.selectAll, new DialogInterface.OnClickListener() {
-				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					for (int i = 0; i < adapter.arrayList.size(); i++) {
-						adapter.arrayList.get(i).setSelected(true);
-					}
-					adapter.notifyDataSetChanged();
-					// To call onCancel listner and set title of selected items.
-					dialog.cancel();
+			builder.setNeutralButton(android.R.string.selectAll, (dialog, which) -> {
+				for (int i = 0; i < adapter.arrayList.size(); i++) {
+					adapter.arrayList.get(i).setSelected(true);
 				}
+				adapter.notifyDataSetChanged();
+				// To call onCancel listner and set title of selected items.
+				dialog.cancel();
 			});
 		}
 
-		builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				//Log.i(TAG, " ITEMS : " + items.size());
-				dialog.cancel();
-			}
+		builder.setPositiveButton(android.R.string.ok, (dialog, which) -> {
+			//Log.i(TAG, " ITEMS : " + items.size());
+			dialog.cancel();
 		});
 
 		builder.setOnCancelListener(this);
 		ad = builder.show();
-		ad.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-
+		Objects.requireNonNull(ad.getWindow()).setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 		return true;
 	}
 
@@ -289,8 +282,8 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
 	public class MyAdapter extends BaseAdapter implements Filterable {
 
 		List<KeyPairBoolData> arrayList;
-		List<KeyPairBoolData> mOriginalValues; // Original Values
-		LayoutInflater inflater;
+		final List<KeyPairBoolData> mOriginalValues; // Original Values
+		final LayoutInflater inflater;
 
 		MyAdapter(Context context, List<KeyPairBoolData> arrayList) {
 			this.arrayList = arrayList;
@@ -328,6 +321,7 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
 			} else {
 				holder = (ViewHolder) convertView.getTag();
 			}
+
 			int background = R.color.white;
 			if (colorSeparation) {
 				final int backgroundColor = (position % 2 == 0) ? R.color.list_even : R.color.list_odd;
@@ -335,32 +329,28 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
 				convertView.setBackgroundColor(ContextCompat.getColor(getContext(), backgroundColor));
 			}
 
-
 			final KeyPairBoolData data = arrayList.get(position);
 
 			holder.textView.setText(data.getName());
-			holder.textView.setTypeface(null, Typeface.NORMAL);
 			holder.checkBox.setChecked(data.isSelected());
 
-			convertView.setOnClickListener(new View.OnClickListener() {
-				public void onClick(View v) {
-					if (data.isSelected()) { // deselect
-						selected--;
-					} else if (selected == limit) { // select with limit
-						if (limitListener != null)
-							limitListener.onLimitListener(data);
-						return;
-					} else { // selected
-						selected++;
-					}
-
-					final ViewHolder temp = (ViewHolder) v.getTag();
-					temp.checkBox.setChecked(!temp.checkBox.isChecked());
-
-					data.setSelected(!data.isSelected());
-					//Log.i(TAG, "On Click Selected Item : " + data.getName() + " : " + data.isSelected());
-					notifyDataSetChanged();
+			convertView.setOnClickListener(v -> {
+				if (data.isSelected()) { // deselect
+					selected--;
+				} else if (selected == limit) { // select with limit
+					if (limitListener != null)
+						limitListener.onLimitListener(data);
+					return;
+				} else { // selected
+					selected++;
 				}
+
+				final ViewHolder temp = (ViewHolder) v.getTag();
+				temp.checkBox.setChecked(!temp.checkBox.isChecked());
+
+				data.setSelected(!data.isSelected());
+				//Log.i(TAG, "On Click Selected Item : " + data.getName() + " : " + data.isSelected());
+				notifyDataSetChanged();
 			});
 
 			if (data.isSelected()) {
