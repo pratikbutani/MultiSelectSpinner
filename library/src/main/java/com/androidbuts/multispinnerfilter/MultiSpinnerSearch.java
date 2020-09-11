@@ -213,10 +213,19 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
 			editText.setVisibility(GONE);
 		}
 
+		/**
+		 * For selected items
+		 */
+		selected = 0;
+		for (int i = 0; i < items.size(); i++) {
+			if (items.get(i).isSelected())
+				selected++;
+		}
+
         /*
         Added Select all Dialog Button.
          */
-		if (isShowSelectAllButton) {
+		if (isShowSelectAllButton && limit == -1) {
 			builder.setNeutralButton(android.R.string.selectAll, (dialog, which) -> {
 				for (int i = 0; i < adapter.arrayList.size(); i++) {
 					adapter.arrayList.get(i).setSelected(true);
@@ -293,9 +302,9 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
 	//Adapter Class
 	public class MyAdapter extends BaseAdapter implements Filterable {
 
-		List<KeyPairBoolData> arrayList;
 		final List<KeyPairBoolData> mOriginalValues; // Original Values
 		final LayoutInflater inflater;
+		List<KeyPairBoolData> arrayList;
 
 		MyAdapter(Context context, List<KeyPairBoolData> arrayList) {
 			this.arrayList = arrayList;
@@ -349,17 +358,19 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
 			convertView.setOnClickListener(v -> {
 				if (data.isSelected()) { // deselect
 					selected--;
-				} else if (selected == limit) { // select with limit
-					if (limitListener != null)
-						limitListener.onLimitListener(data);
-					return;
 				} else { // selected
 					selected++;
+					if (selected > limit && limit > 0) {
+						--selected;// select with limit
+						if (limitListener != null)
+							limitListener.onLimitListener(data);
+						return;
+					}
 				}
+
 
 				final ViewHolder temp = (ViewHolder) v.getTag();
 				temp.checkBox.setChecked(!temp.checkBox.isChecked());
-
 				data.setSelected(!data.isSelected());
 				//Log.i(TAG, "On Click Selected Item : " + data.getName() + " : " + data.isSelected());
 				notifyDataSetChanged();

@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 			KeyPairBoolData h = new KeyPairBoolData();
 			h.setId(i + 1);
 			h.setName(list.get(i));
-			h.setSelected(false);
+			h.setSelected(i < 5);
 			listArray1.add(h);
 		}
 

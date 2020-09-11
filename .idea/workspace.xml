@@ -14,13 +14,17 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08fe6335-ddf0-4e74-b364-7a7bdf45ce38" name="Default Changelist" comment="" />
+    <list default="true" id="08fe6335-ddf0-4e74-b364-7a7bdf45ce38" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/androidbuts/multispinnerfilter/MultiSpinnerSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/androidbuts/multispinnerfilter/MultiSpinnerSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample/src/main/java/com/androidbuts/sample/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/java/com/androidbuts/sample/MainActivity.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="16579747" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="New_Device_1_API_28" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -63,12 +67,16 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DEBUGGABLE_DEVICE" value="New_Device_1_API_28 [emulator-5554]" />
+    <property name="DEBUGGABLE_PROCESS" value="com.androidbuts.sample" />
+    <property name="DEBUGGER_ID" value="Auto" />
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="New_Device_1_API_28" />
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-08-28T05:04:17.701Z" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHOW_ALL_PROCESSES" value="false" />
     <property name="device.picker.selection" value="90ffee42" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/library/src/main/res" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -175,7 +183,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="54e8918a-cdf8-4307-8550-42c543579946" name="Default" comment="" />
+      <changelist id="08fe6335-ddf0-4e74-b364-7a7bdf45ce38" name="Default Changelist" comment="" />
       <created>1546951879119</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -196,7 +204,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -223,50 +233,86 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="393" y="201" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1599730489997" />
-    <state width="1323" height="160" key="GridCell.Tab.0.bottom" timestamp="1598594914959">
+    <state x="538" y="129" key="AndroidProcessChooserDialog" timestamp="1599820271636">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="160" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1598594914959" />
+    <state x="538" y="129" key="AndroidProcessChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1599820271636" />
+    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1599741712568">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1599741712568" />
+    <state x="463" y="104" key="FileChooserDialogImpl" timestamp="1599816350813">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="104" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1599816350813" />
+    <state width="1323" height="207" key="GridCell.Tab.0.bottom" timestamp="1599820326644">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="207" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1599820326644" />
     <state width="1877" height="338" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1592813382424" />
-    <state width="1323" height="160" key="GridCell.Tab.0.center" timestamp="1598594914959">
+    <state width="1323" height="207" key="GridCell.Tab.0.center" timestamp="1599820326644">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="160" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1598594914959" />
+    <state width="1323" height="207" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1599820326644" />
     <state width="1877" height="338" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1592813382424" />
-    <state width="1323" height="160" key="GridCell.Tab.0.left" timestamp="1598594914959">
+    <state width="1323" height="207" key="GridCell.Tab.0.left" timestamp="1599820326644">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="160" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1598594914959" />
+    <state width="1323" height="207" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1599820326644" />
     <state width="1877" height="338" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1592813382424" />
-    <state width="1323" height="160" key="GridCell.Tab.0.right" timestamp="1598594914959">
+    <state width="1323" height="207" key="GridCell.Tab.0.right" timestamp="1599820326644">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="160" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1598594914959" />
+    <state width="1323" height="207" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1599820326644" />
     <state width="1877" height="338" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1592813382424" />
-    <state width="1877" height="338" key="GridCell.Tab.1.bottom" timestamp="1592813382424">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1323" height="207" key="GridCell.Tab.1.bottom" timestamp="1599820326645">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="207" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1599820326645" />
     <state width="1877" height="338" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1592813382424" />
-    <state width="1877" height="338" key="GridCell.Tab.1.center" timestamp="1592813382424">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1323" height="207" key="GridCell.Tab.1.center" timestamp="1599820326645">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="207" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1599820326645" />
     <state width="1877" height="338" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1592813382424" />
-    <state width="1877" height="338" key="GridCell.Tab.1.left" timestamp="1592813382424">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1323" height="207" key="GridCell.Tab.1.left" timestamp="1599820326645">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="207" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1599820326645" />
     <state width="1877" height="338" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1592813382424" />
-    <state width="1877" height="338" key="GridCell.Tab.1.right" timestamp="1592813382424">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1323" height="207" key="GridCell.Tab.1.right" timestamp="1599820326645">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="207" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1599820326645" />
     <state width="1877" height="338" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1592813382424" />
+    <state width="1323" height="207" key="GridCell.Tab.2.bottom" timestamp="1599820326645">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="207" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1599820326645" />
+    <state width="1323" height="207" key="GridCell.Tab.2.center" timestamp="1599820326645">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="207" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1599820326645" />
+    <state width="1323" height="207" key="GridCell.Tab.2.left" timestamp="1599820326645">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="207" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1599820326645" />
+    <state width="1323" height="207" key="GridCell.Tab.2.right" timestamp="1599820326645">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="207" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1599820326645" />
+    <state x="417" y="334" key="ScreenshotRecorder.Options.Dimensions" timestamp="1599816275129">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="417" y="334" key="ScreenshotRecorder.Options.Dimensions/0.0.1366.728@0.0.1366.728" timestamp="1599816275129" />
     <state x="196" y="112" key="caller.chooser.dialog" timestamp="1599731096198">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="196" y="112" key="caller.chooser.dialog/0.0.1366.728@0.0.1366.728" timestamp="1599731096198" />
-    <state x="378" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1599731914630">
+    <state x="378" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1599799843011">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="378" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1599731914630" />
+    <state x="378" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1599799843011" />
     <state x="290" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1599729688920">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -275,9 +321,50 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="656" y="252" width="607" height="536" key="find.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1592813569094" />
-    <state x="339" y="16" width="672" height="676" key="search.everywhere.popup" timestamp="1599731959749">
+    <state x="339" y="16" width="672" height="676" key="search.everywhere.popup" timestamp="1599816957188">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="16" width="672" height="676" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1599731959749" />
+    <state x="339" y="16" width="672" height="676" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1599816957188" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/library/src/main/java/com/androidbuts/multispinnerfilter/MultiSpinnerSearch.java</url>
+          <line>359</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/library/src/main/java/com/androidbuts/multispinnerfilter/MultiSpinnerSearch.java</url>
+          <line>361</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/library/src/main/java/com/androidbuts/multispinnerfilter/MultiSpinnerSearch.java</url>
+          <line>362</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/library/src/main/java/com/androidbuts/multispinnerfilter/MultiSpinnerSearch.java</url>
+          <line>363</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/library/src/main/java/com/androidbuts/multispinnerfilter/MultiSpinnerSearch.java</url>
+          <line>364</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/library/src/main/java/com/androidbuts/multispinnerfilter/MultiSpinnerSearch.java</url>
+          <line>365</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/library/src/main/java/com/androidbuts/multispinnerfilter/MultiSpinnerSearch.java</url>
+          <line>366</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
