@@ -1,12 +1,12 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c6b59b9ed05b45d5b2e4b2747d3cfc9a)](https://app.codacy.com/app/pratikbutani/MultiSelectSpinner?utm_source=github.com&utm_medium=referral&utm_content=pratikbutani/MultiSelectSpinner&utm_campaign=Badge_Grade_Dashboard)
 [![](https://jitpack.io/v/pratikbutani/MultiSelectSpinner.svg)](https://jitpack.io/#pratikbutani/MultiSelectSpinner)
 
-[![MultiSelectSpinner](https://img.youtube.com/vi/mF4WIcQjWLE/0.jpg)](https://www.youtube.com/watch?v=mF4WIcQjWLE)
-
 # MultiSelectSpinner
 ## Android Library to Select multiple items from Spinner
 
-<a href="https://imgur.com/O9n105R"><img src="https://i.imgur.com/O9n105R.gif" title="source: imgur.com" /></a>
+Click to see video of example:
+
+[![MultiSelectSpinner](https://img.youtube.com/vi/mF4WIcQjWLE/0.jpg)](https://www.youtube.com/watch?v=mF4WIcQjWLE?t=35s "Click here to see example")
 
 # How to import
 ## Add it in your root build.gradle at the end of repositories
