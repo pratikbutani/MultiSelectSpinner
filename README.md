@@ -6,7 +6,8 @@
 
 Click to see video of example:
 
-[![MultiSelectSpinner](https://img.youtube.com/vi/mF4WIcQjWLE/0.jpg)](https://www.youtube.com/watch?v=mF4WIcQjWLE?t=35s "Click here to see example")
+[![MultiSelectSpinner](https://yt-embed.herokuapp.com/embed?v=mF4WIcQjWLE)](https://www.youtube.com/watch?v=mF4WIcQjWLE "Click here to see example")
+
 
 # How to import
 ## Add it in your root build.gradle at the end of repositories
