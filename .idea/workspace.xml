@@ -6,7 +6,8 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="CMakeSettings">
     <configurations>
@@ -17,7 +18,7 @@
     <list default="true" id="08fe6335-ddf0-4e74-b364-7a7bdf45ce38" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library/src/main/java/com/androidbuts/multispinnerfilter/MultiSpinnerSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/androidbuts/multispinnerfilter/MultiSpinnerSearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/src/main/java/com/androidbuts/sample/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/java/com/androidbuts/sample/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/androidbuts/multispinnerfilter/SingleSpinnerSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/androidbuts/multispinnerfilter/SingleSpinnerSearch.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,29 +242,29 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1599741712568" />
-    <state x="463" y="104" key="FileChooserDialogImpl" timestamp="1599816350813">
+    <state x="463" y="104" key="FileChooserDialogImpl" timestamp="1599828804413">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="104" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1599816350813" />
-    <state width="1323" height="207" key="GridCell.Tab.0.bottom" timestamp="1599820326644">
+    <state x="463" y="104" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1599828804413" />
+    <state width="1323" height="141" key="GridCell.Tab.0.bottom" timestamp="1600153058551">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="207" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1599820326644" />
+    <state width="1323" height="141" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1600153058551" />
     <state width="1877" height="338" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1592813382424" />
-    <state width="1323" height="207" key="GridCell.Tab.0.center" timestamp="1599820326644">
+    <state width="1323" height="141" key="GridCell.Tab.0.center" timestamp="1600153058550">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="207" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1599820326644" />
+    <state width="1323" height="141" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1600153058550" />
     <state width="1877" height="338" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1592813382424" />
-    <state width="1323" height="207" key="GridCell.Tab.0.left" timestamp="1599820326644">
+    <state width="1323" height="141" key="GridCell.Tab.0.left" timestamp="1600153058550">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="207" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1599820326644" />
+    <state width="1323" height="141" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1600153058550" />
     <state width="1877" height="338" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1592813382424" />
-    <state width="1323" height="207" key="GridCell.Tab.0.right" timestamp="1599820326644">
+    <state width="1323" height="141" key="GridCell.Tab.0.right" timestamp="1600153058550">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="207" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1599820326644" />
+    <state width="1323" height="141" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1600153058550" />
     <state width="1877" height="338" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1592813382424" />
     <state width="1323" height="207" key="GridCell.Tab.1.bottom" timestamp="1599820326645">
       <screen x="0" y="0" width="1366" height="728" />
@@ -301,10 +302,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="207" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1599820326645" />
-    <state x="417" y="334" key="ScreenshotRecorder.Options.Dimensions" timestamp="1599816275129">
+    <state x="417" y="334" key="ScreenshotRecorder.Options.Dimensions" timestamp="1599828685780">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="417" y="334" key="ScreenshotRecorder.Options.Dimensions/0.0.1366.728@0.0.1366.728" timestamp="1599816275129" />
+    <state x="417" y="334" key="ScreenshotRecorder.Options.Dimensions/0.0.1366.728@0.0.1366.728" timestamp="1599828685780" />
+    <state x="0" y="0" key="ScreenshotViewer.Dimensions" timestamp="1599827441160">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="0" y="0" key="ScreenshotViewer.Dimensions/0.0.1366.728@0.0.1366.728" timestamp="1599827441160" />
+    <state width="624" height="448" key="SwitcherDM" timestamp="1600151343079">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="624" height="448" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1600151343079" />
     <state x="196" y="112" key="caller.chooser.dialog" timestamp="1599731096198">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -331,37 +340,37 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/library/src/main/java/com/androidbuts/multispinnerfilter/MultiSpinnerSearch.java</url>
-          <line>359</line>
+          <line>374</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/library/src/main/java/com/androidbuts/multispinnerfilter/MultiSpinnerSearch.java</url>
-          <line>361</line>
+          <line>376</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/library/src/main/java/com/androidbuts/multispinnerfilter/MultiSpinnerSearch.java</url>
-          <line>362</line>
+          <line>377</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/library/src/main/java/com/androidbuts/multispinnerfilter/MultiSpinnerSearch.java</url>
-          <line>363</line>
+          <line>378</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/library/src/main/java/com/androidbuts/multispinnerfilter/MultiSpinnerSearch.java</url>
-          <line>364</line>
+          <line>379</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/library/src/main/java/com/androidbuts/multispinnerfilter/MultiSpinnerSearch.java</url>
-          <line>365</line>
+          <line>380</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/library/src/main/java/com/androidbuts/multispinnerfilter/MultiSpinnerSearch.java</url>
-          <line>366</line>
+          <line>381</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>

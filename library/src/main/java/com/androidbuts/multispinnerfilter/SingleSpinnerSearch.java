@@ -154,7 +154,6 @@ public class SingleSpinnerSearch extends androidx.appcompat.widget.AppCompatSpin
 		emptyText.setText(emptyTitle);
 		listView.setEmptyView(emptyText);
 
-
 		EditText editText = view.findViewById(R.id.alertSearchEditText);
 		if (isSearchEnabled) {
 			editText.setVisibility(VISIBLE);
@@ -226,9 +225,9 @@ public class SingleSpinnerSearch extends androidx.appcompat.widget.AppCompatSpin
 	//Adapter Class
 	public class MyAdapter extends BaseAdapter implements Filterable {
 
+		final LayoutInflater inflater;
 		List<KeyPairBoolData> arrayList;
 		List<KeyPairBoolData> mOriginalValues; // Original Values
-		final LayoutInflater inflater;
 
 		public MyAdapter(Context context, List<KeyPairBoolData> arrayList) {
 			this.arrayList = arrayList;
@@ -257,7 +256,7 @@ public class SingleSpinnerSearch extends androidx.appcompat.widget.AppCompatSpin
 
 			final KeyPairBoolData data = arrayList.get(position);
 
-			if(convertView == null) {
+			if (convertView == null) {
 				holder = new ViewHolder();
 				convertView = inflater.inflate(R.layout.item_listview_single, parent, false);
 				holder.textView = convertView.findViewById(R.id.alertTextView);
@@ -286,12 +285,11 @@ public class SingleSpinnerSearch extends androidx.appcompat.widget.AppCompatSpin
 			}
 
 			convertView.setOnClickListener(v -> {
-				int len = arrayList.size();
-				for (int i = 0; i < len; i++) {
-					arrayList.get(i).setSelected(false);
-					if (i == position) {
-						arrayList.get(i).setSelected(true);
-						Log.i(TAG, "On Click Selected Item : " + arrayList.get(i).getName() + " : " + arrayList.get(i).isSelected());
+				String selectedName = arrayList.get(position).getName();
+				for (int i = 0; i < items.size(); i++) {
+					items.get(i).setSelected(false);
+					if (items.get(i).getName().equalsIgnoreCase(selectedName)) {
+						items.get(i).setSelected(true);
 					}
 				}
 				ad.dismiss();
@@ -309,7 +307,6 @@ public class SingleSpinnerSearch extends androidx.appcompat.widget.AppCompatSpin
 				@SuppressWarnings("unchecked")
 				@Override
 				protected void publishResults(CharSequence constraint, FilterResults results) {
-
 					arrayList = (List<KeyPairBoolData>) results.values; // has the filtered values
 					notifyDataSetChanged();  // notifies the data with new filtered values
 				}
@@ -318,7 +315,6 @@ public class SingleSpinnerSearch extends androidx.appcompat.widget.AppCompatSpin
 				protected FilterResults performFiltering(CharSequence constraint) {
 					FilterResults results = new FilterResults();        // Holds the results of a filtering operation in values
 					List<KeyPairBoolData> FilteredArrList = new ArrayList<>();
-
 					if (mOriginalValues == null) {
 						mOriginalValues = new ArrayList<>(arrayList); // saves the original data in mOriginalValues
 					}
