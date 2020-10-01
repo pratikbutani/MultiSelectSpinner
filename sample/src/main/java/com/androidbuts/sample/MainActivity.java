@@ -14,6 +14,7 @@ import com.androidbuts.multispinnerfilter.SingleSpinnerSearch;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedHashSet;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -80,7 +81,6 @@ public class MainActivity extends AppCompatActivity {
 			}
 		});
 
-
 		MultiSpinnerSearch multiSelectSpinnerWithSearch = findViewById(R.id.multipleItemSelectionSpinner);
 
 		CheckBox colorSeparationMultipleCheckBox = findViewById(R.id.colorSeparationMultipleCheckBox);
@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
 		multiSelectSpinnerWithSearch.setHintText("Select Any");
 
 		//A text that will display in clear text button
-		multiSelectSpinnerWithSearch.setClearText("Hello Dear");
+		multiSelectSpinnerWithSearch.setClearText("Close & Clear");
 
 		// A text that will display in search hint.
 		multiSelectSpinnerWithSearch.setSearchHint("Select your mood");
@@ -131,5 +131,9 @@ public class MainActivity extends AppCompatActivity {
 				Log.i(TAG, i + " : " + items.get(i).getName() + " : " + items.get(i).isSelected());
 			}
 		});
+	}
+
+	public String deDup(String s, String ch) {
+		return new LinkedHashSet<String>(Arrays.asList(s.split(ch))).toString().replaceAll("(^\\[|]$)", "").replace(", ", ch);
 	}
 }
