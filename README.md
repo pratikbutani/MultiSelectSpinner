@@ -110,7 +110,7 @@ Click to see video of example:
 		// If you will set the limit, this button will not display automatically.
 		multiSelectSpinnerWithSearch.setShowSelectAllButton(true);
 
-        //A text that will display in clear text button
+        	//A text that will display in clear text button
 		multiSelectSpinnerWithSearch.setClearText("Close & Clear");
 		
 		// Removed second parameter, position. Its not required now..
