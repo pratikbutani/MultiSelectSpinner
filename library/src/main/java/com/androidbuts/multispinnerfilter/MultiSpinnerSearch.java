@@ -46,6 +46,7 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
 	private String spinnerTitle = "";
 	private String emptyTitle = "Not Found!";
 	private String searchHint = "Type to search";
+	private String clearText = "Clear All";
 	private boolean colorSeparation = false;
 
 	private boolean isShowSelectAllButton = false;
@@ -77,6 +78,8 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
 				highlightColor = a.getColor(attr, ContextCompat.getColor(getContext(), R.color.list_selected));
 			} else if (attr == R.styleable.MultiSpinnerSearch_textColor) {
 				textColor = a.getColor(attr, Color.GRAY);
+			}else if (attr == R.styleable.MultiSpinnerSearch_clearText){
+				this.setClearText(a.getString(attr));
 			}
 		}
 
@@ -111,6 +114,10 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
 	public void setHintText(String hintText) {
 		this.spinnerTitle = hintText;
 		defaultText = spinnerTitle;
+	}
+
+	public void setClearText(String clearText){
+		this.clearText = clearText;
 	}
 
 	public void setLimit(int limit, LimitExceedListener listener) {
@@ -256,7 +263,7 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
 			dialog.cancel();
 		});
 
-		builder.setNegativeButton("Clear All", new DialogInterface.OnClickListener() {
+		builder.setNegativeButton(clearText, new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				//Log.i(TAG, " ITEMS : " + items.size());
