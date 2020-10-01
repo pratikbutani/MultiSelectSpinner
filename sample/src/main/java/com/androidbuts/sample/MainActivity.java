@@ -110,6 +110,9 @@ public class MainActivity extends AppCompatActivity {
 
 		multiSelectSpinnerWithSearch.setHintText("Select Any");
 
+		//A text that will display in clear text button
+		multiSelectSpinnerWithSearch.setClearText("Hello Dear");
+
 		// A text that will display in search hint.
 		multiSelectSpinnerWithSearch.setSearchHint("Select your mood");
 
