@@ -140,6 +140,14 @@ Click to see video of example:
 			}
 		});
 
+## Awesome contributors :star_struck:
+<a href="https://github.com/pratikbutani/MultiSelectSpinner/graphs/contributors">
+  <img src="https://contributors-img.web.app/image?repo=pratikbutani/MultiSelectSpinner" />
+</a>
+
+Made with [contributors-img](https://contributors-img.web.app).
+
+
 ## Buy a cup of coffee
 If you found this project helpful or you learned something from the source code and want to thank me, consider buying me a cup of ☕️ [PayPal](http://paypal.me/androidbuts)
 
