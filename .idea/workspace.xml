@@ -17,14 +17,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08fe6335-ddf0-4e74-b364-7a7bdf45ce38" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/sample/src/main/java/com/androidbuts/sample/MainDataBindingActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/src/main/res/layout/activity_main_data_binding.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/sample/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/AndroidManifest.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="HA13VF5Q" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -89,15 +93,18 @@
     <option name="MODULE_TAB" value="Default Config" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Projects\Others\MultiSelectSpinner\sample\src\main\res\drawable" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.androidbuts.multispinnerfilter" />
+    <key name="android.template.-1222476902">
+      <recent name="com.androidbuts.sample" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\hussein.yassine\AndroidStudioProjects\Github Modules\MultiSelectSpinner\library\src\main\res" />
       <recent name="C:\Users\hussein.yassine\AndroidStudioProjects\Github Modules\MultiSelectSpinner\sample\src\main\res\values-v14" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.androidbuts.multispinnerfilter" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Projects\Others\MultiSelectSpinner\sample\src\main\res\drawable" />
     </key>
   </component>
   <component name="RunManager">
@@ -326,6 +333,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="472" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1601558913831" />
+    <state width="300" height="109" key="javadoc.popup.new" timestamp="1603259127794">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="300" height="109" key="javadoc.popup.new/0.0.1440.900/1440.-124.1920.1080@0.0.1440.900" timestamp="1603259127794" />
     <state x="339" y="16" width="672" height="676" key="search.everywhere.popup" timestamp="1599816957188">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
