@@ -5,6 +5,11 @@ public class KeyPairBoolData {
 	private String name;
 	private boolean isSelected;
 	private Object object;
+	
+	public KeyPairBoolData(String name, String isSelected){
+		this.name = name;
+		this.isSelected	= isSelected;
+	}
 
 	public Object getObject() {
 		return object;
