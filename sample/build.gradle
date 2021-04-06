@@ -21,7 +21,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    buildToolsVersion '30.0.1'
+    buildToolsVersion '30.0.2'
 
     buildFeatures {
         viewBinding true
@@ -31,9 +31,9 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation project(':library')
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
-    testImplementation 'junit:junit:4.13'
-//	implementation 'com.github.pratikbutani:MultiSelectSpinner:-SNAPSHOT'
+//    implementation project(':library')
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.13.2'
+    implementation 'com.github.pratikbutani:MultiSelectSpinner:f47c0dadea'
     implementation 'androidx.appcompat:appcompat:1.2.0'
 }
