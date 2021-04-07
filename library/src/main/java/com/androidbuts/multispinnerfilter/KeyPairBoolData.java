@@ -6,7 +6,7 @@ public class KeyPairBoolData {
 	private boolean isSelected;
 	private Object object;
 	
-	public KeyPairBoolData(String name, String isSelected){
+	public KeyPairBoolData(String name, boolean isSelected){
 		this.name = name;
 		this.isSelected	= isSelected;
 	}
