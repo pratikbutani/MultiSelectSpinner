@@ -31,9 +31,9 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-//    implementation project(':library')
+    implementation project(':library')
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     testImplementation 'junit:junit:4.13.2'
-    implementation 'com.github.pratikbutani:MultiSelectSpinner:f47c0dadea'
+//    implementation 'com.github.pratikbutani:MultiSelectSpinner:f47c0dadea'
     implementation 'androidx.appcompat:appcompat:1.2.0'
 }
