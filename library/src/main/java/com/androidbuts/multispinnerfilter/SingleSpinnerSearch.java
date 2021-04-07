@@ -48,7 +48,7 @@ public class SingleSpinnerSearch extends androidx.appcompat.widget.AppCompatSpin
 
 	public SingleSpinnerSearch(Context arg0, AttributeSet arg1) {
 		super(arg0, arg1);
-		TypedArray a = arg0.obtainStyledAttributes(arg1, R.styleable.MultiSpinnerSearch);
+		TypedArray a = arg0.obtainStyledAttributes(arg1, R.styleable.SingleSpinnerSearch);
 		final int N = a.getIndexCount();
 		for (int i = 0; i < N; ++i) {
 			int attr = a.getIndex(i);
@@ -129,7 +129,7 @@ public class SingleSpinnerSearch extends androidx.appcompat.widget.AppCompatSpin
 
 	@Override
 	public boolean performClick() {
-
+		super.performClick();
 		builder = new AlertDialog.Builder(getContext());
 		builder.setTitle(spinnerTitle);
 

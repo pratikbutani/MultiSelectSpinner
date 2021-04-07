@@ -40,7 +40,7 @@
 			android:layout_centerHorizontal="true"
 			android:layout_centerVertical="true"
 			android:gravity="center"
-			android:text="Not Found!"
+			android:text="@string/not_found"
 			android:textAppearance="?android:attr/textAppearanceLarge"
 			android:textColor="@color/red" />
 	</RelativeLayout>

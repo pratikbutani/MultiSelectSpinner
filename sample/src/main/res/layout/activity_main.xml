@@ -16,7 +16,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_gravity="center"
-			android:text="Single Item Selection Spinner" />
+			android:text="@string/single_item_selection_spinner" />
 
 		<com.androidbuts.multispinnerfilter.SingleSpinnerSearch
 			android:id="@+id/singleItemSelectionSpinner"
@@ -30,7 +30,7 @@
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_margin="10dp"
-			android:text="Color Separation in Row" />
+			android:text="@string/color_separation_in_row" />
 
 		<CheckBox
 			android:id="@+id/searchEditTextCheckBox"
@@ -38,7 +38,7 @@
 			android:layout_height="wrap_content"
 			android:layout_margin="10dp"
 			android:checked="true"
-			android:text="Search EditText" />
+			android:text="@string/search_edit_text" />
 
 	</LinearLayout>
 
@@ -58,7 +58,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_gravity="center"
-			android:text="Multi Item Selection Spinner" />
+			android:text="@string/multi_item_selection_spinner" />
 
 		<com.androidbuts.multispinnerfilter.MultiSpinnerSearch
 			android:id="@+id/multipleItemSelectionSpinner"
@@ -73,14 +73,14 @@
 			android:layout_height="wrap_content"
 			android:layout_margin="10dp"
 			android:checked="true"
-			android:text="Select All Button" />
+			android:text="@string/select_all_button" />
 
 		<CheckBox
 			android:id="@+id/colorSeparationMultipleCheckBox"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_margin="10dp"
-			android:text="Color Separation in Row" />
+			android:text="@string/color_separation_in_row" />
 
 		<CheckBox
 			android:id="@+id/searchEditTextMultipleCheckBox"
@@ -88,14 +88,14 @@
 			android:layout_height="wrap_content"
 			android:layout_margin="10dp"
 			android:checked="true"
-			android:text="Search EditText" />
+			android:text="@string/search_edit_text" />
 
 		<CheckBox
 			android:id="@+id/limitMultipleCheckBox"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_margin="10dp"
-			android:text="Limited Selection (Limit given 5)" />
+			android:text="@string/limited_selection_limit_given_5" />
 
 	</LinearLayout>
 

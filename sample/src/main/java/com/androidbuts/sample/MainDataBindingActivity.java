@@ -18,7 +18,7 @@ import java.util.List;
 public class MainDataBindingActivity extends AppCompatActivity {
 
     private ActivityMainDataBindingBinding binding;
-    private String TAG = "MainDataBindingActivity";
+    private final String TAG = "MainDataBindingActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,12 +82,12 @@ public class MainDataBindingActivity extends AppCompatActivity {
         binding.searchEditTextMultipleCheckBox.setOnCheckedChangeListener((compoundButton, b) -> binding.multipleItemSelectionSpinner.setSearchEnabled(b));
 
         binding.limitMultipleCheckBox.setOnCheckedChangeListener((compoundButton, b) -> {
-            /**
+            /*
              * If you want to set limit as maximum item should be selected is 2.
              * For No limit -1 or do not call this method.
              *
              */
-            /**** UNCOMMENT FOLLOWING CODE IF YOU WANT TO SET LIMIT ****/
+            /* UNCOMMENT FOLLOWING CODE IF YOU WANT TO SET LIMIT ****/
             binding.multipleItemSelectionSpinner.setLimit(b ? 5 : -1, data -> Toast.makeText(getApplicationContext(),
                     "Limit Exceed", Toast.LENGTH_LONG).show());
         });

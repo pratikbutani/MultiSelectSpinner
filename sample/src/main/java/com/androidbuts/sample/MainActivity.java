@@ -93,12 +93,12 @@ public class MainActivity extends AppCompatActivity {
 		searchEditTextMultipleCheckBox.setOnCheckedChangeListener((compoundButton, b) -> multiSelectSpinnerWithSearch.setSearchEnabled(b));
 
 		limitEditTextMultipleCheckBox.setOnCheckedChangeListener((compoundButton, b) -> {
-			/**
+			/*
 			 * If you want to set limit as maximum item should be selected is 2.
 			 * For No limit -1 or do not call this method.
 			 *
 			 */
-			/**** UNCOMMENT FOLLOWING CODE IF YOU WANT TO SET LIMIT ****/
+			/* UNCOMMENT FOLLOWING CODE IF YOU WANT TO SET LIMIT ****/
 			multiSelectSpinnerWithSearch.setLimit(b ? 5 : -1, data -> Toast.makeText(getApplicationContext(),
 					"Limit Exceed", Toast.LENGTH_LONG).show());
 		});
@@ -134,6 +134,6 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 	public String deDup(String s, String ch) {
-		return new LinkedHashSet<String>(Arrays.asList(s.split(ch))).toString().replaceAll("(^\\[|]$)", "").replace(", ", ch);
+		return new LinkedHashSet<>(Arrays.asList(s.split(ch))).toString().replaceAll("(^\\[|]$)", "").replace(", ", ch);
 	}
 }

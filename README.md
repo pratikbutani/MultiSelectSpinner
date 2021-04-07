@@ -9,8 +9,8 @@ Click to see video of example:
 [![MultiSelectSpinner](https://yt-embed.herokuapp.com/embed?v=mF4WIcQjWLE)](https://www.youtube.com/watch?v=mF4WIcQjWLE "Click here to see example")
 
 
-# How to import
-## Add it in your root build.gradle at the end of repositories
+## How to import
+### Add it in your root build.gradle at the end of repositories
 
 	allprojects {
 		repositories {
@@ -19,11 +19,11 @@ Click to see video of example:
 		}
 	}
 
-## Add dependency in build.gradle
+### Add dependency in build.gradle
 
     implementation 'com.github.pratikbutani:MultiSelectSpinner:f47c0dadea'
 
-## Recent Changes
+### Recent Changes
 
   * Added Material library.
   * Extracted the sample into a separate module.
@@ -34,9 +34,9 @@ Click to see video of example:
   * **MOST IMP CHANGE** You will get all the selected items in the listener instead of all items.
  
 
-# How to use SINGLE ITEM SELECTION
+## How to use SINGLE ITEM SELECTION
 
-## SINGLE ITEM SELECTION SPINNER (XML Code)
+### SINGLE ITEM SELECTION SPINNER (XML Code)
 
     <com.androidbuts.multispinnerfilter.SingleSpinnerSearch
             android:id="@+id/singleItemSelectionSpinner"
@@ -45,7 +45,7 @@ Click to see video of example:
             android:layout_margin="10dp"
             app:hintText="Single Selection Spinner" />
 
-## SINGLE ITEM SELECTION SPINNER (Java Code)
+### SINGLE ITEM SELECTION SPINNER (Java Code)
 
         /******** MUST READ ALL COMMENTS AS DOCUMENTATION *********/
         /**
@@ -79,8 +79,8 @@ Click to see video of example:
 		});
 
 
-# How to use MULTIPLE ITEM SELECTION SPINNER
-## MULTIPLE ITEM SELECTION SPINNER (XML Code)
+## How to use MULTIPLE ITEM SELECTION SPINNER
+### MULTIPLE ITEM SELECTION SPINNER (XML Code)
 
 	<com.androidbuts.multispinnerfilter.MultiSpinnerSearch
 		android:id="@+id/multipleItemSelectionSpinner"
@@ -89,7 +89,7 @@ Click to see video of example:
 		android:layout_margin="10dp"
 		app:hintText="Multi Item Selection" />
 
-## MULTIPLE ITEM SELECTION SPINNER (Java Code)
+### MULTIPLE ITEM SELECTION SPINNER (Java Code)
 
         /**
 		 * Search MultiSelection Spinner (With Search/Filter Functionality)

@@ -2,5 +2,7 @@
 <resources>
 
     <string name="type_to_search">Type to Search</string>
-    
+	<string name="string_item_name">Item Name</string>
+	<string name="not_found">Not Found!</string>
+
 </resources>

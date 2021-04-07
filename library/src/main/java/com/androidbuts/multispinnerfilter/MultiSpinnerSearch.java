@@ -168,7 +168,7 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
 		else
 			spinnerText = this.getHintText();
 
-		ArrayAdapter<String> adapterSpinner = new ArrayAdapter<String>(getContext(), R.layout.textview_for_spinner, new String[]{spinnerText});
+		ArrayAdapter<String> adapterSpinner = new ArrayAdapter<>(getContext(), R.layout.textview_for_spinner, new String[]{spinnerText});
 		setAdapter(adapterSpinner);
 
 		if (adapter != null)
@@ -176,16 +176,13 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
 
 		listener.onItemsSelected(selectedData);
 
-		/**
+		/*
 		 * To hide dropdown which is already opened at the time of performClick...
 		 * This code will hide automatically and no need to tap by user.
 		 */
-		new Thread(new Runnable() {
-			@Override
-			public void run() {
-				Instrumentation inst = new Instrumentation();
-				inst.sendKeyDownUpSync(KeyEvent.KEYCODE_BACK);
-			}
+		new Thread(() -> {
+			Instrumentation inst = new Instrumentation();
+			inst.sendKeyDownUpSync(KeyEvent.KEYCODE_BACK);
 		}).start();
 	}
 
@@ -235,7 +232,7 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
 			editText.setVisibility(GONE);
 		}
 
-		/**
+		/*
 		 * For selected items
 		 */
 		selected = 0;
@@ -263,16 +260,13 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
 			dialog.cancel();
 		});
 
-		builder.setNegativeButton(clearText, new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				//Log.i(TAG, " ITEMS : " + items.size());
-				for (int i = 0; i < adapter.arrayList.size(); i++) {
-					adapter.arrayList.get(i).setSelected(false);
-				}
-				adapter.notifyDataSetChanged();
-				dialog.cancel();
+		builder.setNegativeButton(clearText, (dialog, which) -> {
+			//Log.i(TAG, " ITEMS : " + items.size());
+			for (int i = 0; i < adapter.arrayList.size(); i++) {
+				adapter.arrayList.get(i).setSelected(false);
 			}
+			adapter.notifyDataSetChanged();
+			dialog.cancel();
 		});
 
 		builder.setOnCancelListener(this);
