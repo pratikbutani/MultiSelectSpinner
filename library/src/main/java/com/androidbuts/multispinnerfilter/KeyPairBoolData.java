@@ -1,7 +1,7 @@
 package com.androidbuts.multispinnerfilter;
 
 public class KeyPairBoolData {
-	private long id;
+	private String id;
 	private String name;
 	private boolean isSelected;
 	private Object object;
