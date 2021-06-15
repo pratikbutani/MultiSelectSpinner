@@ -136,8 +136,8 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
 		return selectedItems;
 	}
 
-	public List<Long> getSelectedIds() {
-		List<Long> selectedItemsIds = new ArrayList<>();
+	public List<String> getSelectedIds() {
+		List<String> selectedItemsIds = new ArrayList<>();
 		for (KeyPairBoolData item : items) {
 			if (item.isSelected()) {
 				selectedItemsIds.add(item.getId());
