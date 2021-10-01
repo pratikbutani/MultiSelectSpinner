@@ -32,7 +32,6 @@ Click to see video of example:
   * `selectAll` button added to Select All Items in MultiSelectSpinner.
   * Code Optimised and Upgraded to latest versions of libraries/dependencies.
   * **MOST IMP CHANGE** You will get all the selected items in the listener instead of all items.
- 
 
 ## How to use SINGLE ITEM SELECTION
 
@@ -64,7 +63,7 @@ Click to see video of example:
 
 		// Removed second parameter, position. Its not required now..
 		// If you want to pass preselected items, you can do it while making listArray,
-		// pass true in setSelected of any item that you want to preselect
+		// Pass true in setSelected of any item that you want to preselect
 		// LOGICALLY, PASS Only One Item As SELECTED...
 		singleSpinnerSearch.setItems(listArray0, new SingleSpinnerListener() {
 			@Override
@@ -77,7 +76,6 @@ Click to see video of example:
 				Toast.makeText(MainActivity.this, "Cleared Selected Item", Toast.LENGTH_SHORT).show();
 			}
 		});
-
 
 ## How to use MULTIPLE ITEM SELECTION SPINNER
 ### MULTIPLE ITEM SELECTION SPINNER (XML Code)
@@ -115,7 +113,7 @@ Click to see video of example:
 		
 		// Removed second parameter, position. Its not required now..
 		// If you want to pass preselected items, you can do it while making listArray,
-		// pass true in setSelected of any item that you want to preselect
+		// Pass true in setSelected of any item that you want to preselect
 		multiSelectSpinnerWithSearch.setItems(listArray1, new MultiSpinnerListener() {
 			@Override
 			public void onItemsSelected(List<KeyPairBoolData> items) {
@@ -147,8 +145,7 @@ Click to see video of example:
 
 Made with [contributors-img](https://contributors-img.web.app).
 
-
 ## Buy a cup of coffee
 If you found this project helpful or you learned something from the source code and want to thank me, consider buying me a cup of ☕️ [PayPal](http://paypal.me/androidbuts)
 
-### Do not forget to give star If its useful to you. :)
+### Do not forget to give star if its useful to you. :)
