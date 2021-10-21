@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
 		// Removed second parameter, position. Its not required now..
 		// If you want to pass preselected items, you can do it while making listArray,
-		// pass true in setSelected of any item that you want to preselect
+		// Pass true in setSelected of any item that you want to preselect
 		// LOGICALLY, PASS Only One Item As SELECTED...
 		singleSpinnerSearch.setItems(listArray0, new SingleSpinnerListener() {
 			@Override
@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
 
 		// Removed second parameter, position. Its not required now..
 		// If you want to pass preselected items, you can do it while making listArray,
-		// pass true in setSelected of any item that you want to preselect
+		// Pass true in setSelected of any item that you want to preselect
 		multiSelectSpinnerWithSearch.setItems(listArray1, items -> {
 			//The followings are selected items.
 			for (int i = 0; i < items.size(); i++) {
